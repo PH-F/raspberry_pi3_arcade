@@ -7,7 +7,7 @@
 5. Eject the SDcard
 6. Put in the raspberry pi connect keyboard monitor, mouse and power
 7. On the installation menu choose Raspbian (debian)
-8. Launch the terminal on the rasberry and:
+8. Launch the terminal on the raspberry and:
     1. sudo apt-get install apache2 php
     2. sudo apt-get install php-xml
     3. sudo apt-get install git-core
@@ -33,6 +33,13 @@
     20. sudo apt-get install python-dev python-pip gcc
     21. sudo pip install evdev
     22. sudo modprobe uinput
+9. Start the pythonscript at boot
+	1. sudo chmod 755 /var/www/app/boot.sh
+	2. sudo mkdir var/log/cron
+	3. sudo chmod 777 var/log/cron/
+	4. sudo crontab -e 
+		Add:  @reboot sh /var/www/app/boot.sh > /var/log/cron/cronlog 2>&1
+
 
 # Run (in the background)
 sudo python python/emulateKeyBoard.py
