@@ -43,6 +43,7 @@
 	1. in the terminal edit ~/.bashrc
 	2. Add at the bottom:  chromium-browser --kiosk localhost
 	3. save and reboot
+	4. Note:   crtl W   will close the browser!
 
 
 # Run (in the background)
