@@ -39,6 +39,11 @@
 	3. sudo chmod 777 var/log/cron/
 	4. sudo crontab -e 
 		Add:  @reboot sh /var/www/app/boot.sh > /var/log/cron/cronlog 2>&1
+10. Start the browser at boot
+	1. in the terminal edit ~/.bashrc
+	2. Add at the bottom:  chromium-browser --kiosk localhost
+	3. save and reboot
+	4. Note:   crtl W   will close the browser!
 
 
 # Run (in the background)
