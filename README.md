@@ -1,7 +1,7 @@
 # Raspberry PI3
 
 1. download and install SD cardFormatter for Mac (or windows) https://www.sdcard.org/downloads/formatter_4/index.html
-2. download NOOBS https://www.raspberrypi.org/downloads/noobs/
+2. download NOOffBS https://www.raspberrypi.org/downloads/noobs/
 3. Format the SDcard
 4. Extract the NOOBS zipfile and copy the contents to the SDcard (1.83GB)
 5. Eject the SDcard
