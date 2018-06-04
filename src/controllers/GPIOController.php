@@ -15,7 +15,8 @@ class GPIOController
 		$this->listen();
 	}
 	public function switchOn(Request $request, Response $response, array $args) {
-		exec("python ".__DIR__."/../../python/switchOn.py ".$args['pin']." on");
+	    $pin = [1=>21, 2=>21, 3=>21, 4=>21];
+		exec("python ".__DIR__."/../../python/switchOn.py ".$pin[$args['pin']]." on 1");
 		die("on");
 	}
 	public function switchOff(Request $request, Response $response, array $args) {

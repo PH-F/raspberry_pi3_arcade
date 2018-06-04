@@ -15,10 +15,13 @@ $app->get('/quiz', function (Request $request, Response $response, array $args) 
     return $this->renderer->render($response, 'quiz.phtml', $args);
 });
 
-$app->get('/switchOn/{pin}', \GPIOController::class.":switchOn");
-$app->get('/switchOff/{pin}', \GPIOController::class.":switchOff");
 
 
+$app->post('/switchOn/{pin}', \GPIOController::class.":switchOn");
+
+$app->post('/TESTswitchOn/{pin}', function (Request $request, Response $response, array $args) {
+    return 'on:';
+});
 
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {
     // Sample log message

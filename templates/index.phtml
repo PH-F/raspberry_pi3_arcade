@@ -1,12 +1,85 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <script src="jquery-3.3.1.min.js"></script>
-        <title>Arcade</title>
-    </head>
-    <body>
-        <h1>Index</h1>
+<head>
+    <meta charset="utf-8"/>
+    <script src="jquery-3.3.1.min.js"></script>
+    <title>Arcade</title>
+</head>
+<body>
+<h1>Index</h1>
+<br>
+Correct: <span id="correct">0</span>
+<br>
+Wrong: <span id="wrong">0</span>
+<br>
+No answer: <span id="missed">0</span>
 
-    </body>
+
+<script>
+    var timeout = 1000;
+    var current = 0;
+    var correct = 0;
+    var wrong = 0;
+    var missed = 0;
+    var ready = false;
+
+    function sleep (time) {
+        return new Promise((resolve) => setTimeout(resolve, time));
+    }
+    function rand () {
+        var val;
+        min = 1;
+        max = 4;
+        val = Math.floor(Math.random() * (max - min + 1) + min);
+        return val == current ? rand() : val;
+    }
+    function change() {
+        console.clear();
+        sleep(timeout).then(() => {
+            current = rand();
+            $.post( "/TESTswitchOn/" + current, function( data ) {
+                if(ready){
+                    $('#missed').text(++missed);
+                }
+                ready = true;
+                console.log(current);
+            });
+            change();
+        });
+    }
+    function translatekey(key) {
+        switch(key) {
+            case 113: return 1; break;
+            case 119: return 2; break;
+            case 101: return 3; break;
+            case 114: return 4; break;
+        }
+    }
+
+    $(function(){
+        change();
+    })
+
+    $(document).keypress(function (e) {
+        var mode = 'game';
+        if (e.which == 49) { //1
+            location.reload();
+        } else if (e.which == 50) { //2
+            alert('Redirect to the movie');
+        } else if (e.which == 51) { //2
+            alert('Redirect to the questionnaire');
+        } else if(ready) {
+            if (current == translatekey(e.which)) {
+                $('#correct').text(++correct);
+            } else {
+                $('#wrong').text(++wrong);
+            }
+            ready = false;
+        }
+    });
+
+</script>
+
+
+</body>
 </html>
