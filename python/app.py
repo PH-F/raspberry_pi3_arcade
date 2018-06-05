@@ -8,7 +8,7 @@ def main():
 
 @app.route('/switchOn/<pin>',methods=['POST'])
 def switchOn(pin):
-    led = gpio.GPIO()
+    led = gpio.GPIOhelper()
     return led.switchOn(pin)
 
 if __name__ == "__main__":
