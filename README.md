@@ -8,11 +8,16 @@
 6. Put in the raspberry pi connect keyboard monitor, mouse and power
 7. On the installation menu choose Raspbian (debian)
 8. Launch the terminal on the raspberry and:
-    1. sudo apt-get install apache2 php
-    2. sudo apt-get install php-xml
+    1. sudo apt-get install apache2
+    2. sudo pip install flask
     3. sudo apt-get install git-core
+
+```
+    2. sudo apt-get install php
+    2. sudo apt-get install php-xml
     4. sudo a2enmod rewrite
-    5. cd /home/Pi
+```
+   5. cd /home/Pi
     6. git clone git://git.drogon.net/wiringPi
     7. cd wiringPi
     8. ./build
@@ -49,4 +54,4 @@
 # Run (in the background)
 sudo python python/emulateKeyBoard.py
 
-# Build with Python and Slim Framework 3
+# Build with Python
