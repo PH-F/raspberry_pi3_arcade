@@ -36,7 +36,7 @@ function gameBlink() {
             ready = true;
             console.log(current);
         });
-        change();
+        gameBlink();
     });
 }
 
@@ -61,4 +61,4 @@ $(function() {
             keyHandler(e.which)
         }
     });
-}
+});

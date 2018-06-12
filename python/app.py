@@ -4,18 +4,18 @@ import gpio
 app = Flask(__name__)
 @app.route("/")
 def main():
-    return render_template('movie.html')
+    return render_template('index.html')
 
 @app.route("/movie")
-def main():
+def movie():
     return render_template('movie.html')
 
 @app.route("/game")
-def main():
+def game():
     return render_template('game.html')
 
 @app.route("/quiz")
-def main():
+def quiz():
     return render_template('quiz.html')
 
 @app.route('/switchOn/<pin>',methods=['POST'])
