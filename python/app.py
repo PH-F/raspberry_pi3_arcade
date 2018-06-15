@@ -36,12 +36,12 @@ def blink(pin):
     return led.blink(pin)
 
 @app.route('/switchOn/<pin>',methods=['POST'])
-def blink(pin):
+def switchOn(pin):
     led = gpio.GPIOhelper()
     return led.switchOn(pin)
 
 @app.route('/switchOff/<pin>',methods=['POST'])
-def blink(pin):
+def switchOff(pin):
     led = gpio.GPIOhelper()
     return led.switchOff(pin)
 

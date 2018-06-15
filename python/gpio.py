@@ -80,5 +80,5 @@ class GPIOhelper:
         #GPIO.setup(21, GPIO.OUT, initial=GPIO.LOW)
         #GPIO.setup(21, GPIO.OUT, initial=GPIO.LOW)
 
-		GPIO.cleanup()
-		return message
+        GPIO.cleanup()
+        return message
