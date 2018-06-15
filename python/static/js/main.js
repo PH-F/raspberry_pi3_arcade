@@ -40,11 +40,43 @@ function getTimestamp(seconds) {
  * Start the game by clicking the highlighted ky.
  */
 function startGame() {
-    current = rand();
-    console.log(current);
-    $.post( "/switchOn/" + current);
+    // current = rand();
+    // $.post( "/switchOn/" + current);
+    switchOn();
 }
 
+/**
+ * Animate the 4 button 1, 12, 123, 1234, 234 ,34 ,4, loop
+ */
+function animation1() {
+    $.post( "/switchOn/1");
+    sleep(timeout).then(() => {
+        $.post("/switchOn/2");
+        sleep(timeout).then(() => {
+            $.post("/switchOn/3");
+            sleep(timeout).then(() => {
+                $.post("/switchOn/4");
+                sleep(timeout).then(() => {
+                    //---------------------
+                    $.post( "/switchOff/1");
+                    sleep(timeout).then(() => {
+                        $.post("/switchOff/2");
+                        sleep(timeout).then(() => {
+                            $.post("/switchOff/3");
+                            sleep(timeout).then(() => {
+                                $.post("/switchOff/4");
+                                sleep(timeout).then(() => {
+                                    animate();
+                                });
+                            });
+                        });
+                    });
+                    //---------------------
+                });
+            });
+        });
+    });
+}
 /**
  * Calculate the gamescode
  * @returns {number}
@@ -109,9 +141,9 @@ $(function() {
     $(document).keypress(function (e) {
         if (e.which == 49) { //1
             location.href = '/game'
-        } else if (e.which == 50) { //2\
+        } else if (e.which == 50) { //2
             location.href = '/movie'
-        } else if (e.which == 51) { //2
+        } else if (e.which == 51) { //3
             location.href = '/quiz'
         } else if (ready) {
             keyHandler(e.which)

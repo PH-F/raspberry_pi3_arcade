@@ -32,11 +32,13 @@
 
 <script>
     function keyHandler(keyCode) {
-        if (current == translatekey(keyCode)) {
+        //if (current == translatekey(keyCode))
+        {
             location.href='game_run';
         }
     }
     $(function(){
+        ready = true;
         startGame();
     });
 </script>
