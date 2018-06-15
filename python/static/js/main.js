@@ -9,11 +9,18 @@ function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }
 function rand () {
-    var val;
+    let val;
     min = 1;
     max = 4;
     val = Math.floor(Math.random() * (max - min + 1) + min);
     return val == current ? rand() : val;
+}
+
+function startGame() {
+    current = rand();
+    $('#r'+current).html('&#9787;');
+    $.post( "/switchOn/" + current);
+
 }
 
 function gameBlink() {
@@ -29,7 +36,7 @@ function gameBlink() {
         $('#r'+current).html('&#9787;');
         //temp
 
-        $.post( "/switchOn/" + current, function( data ) {
+        $.post( "/blink/" + current, function( data ) {
             if(ready){
                 $('#missed').text(++missed);
             }
