@@ -77,7 +77,7 @@ class GPIOhelper:
 		return message
 
     def reset(self):
-		message = ""
+        message = ""
 
         GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BCM)
