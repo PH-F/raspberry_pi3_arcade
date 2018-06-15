@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/main.js"></script>
+    <title>BREINHELD - REACTIESPEL</title>
+    <style>
+        .hidden{
+            display: none;
+        }
+        .right{
+            text-align: right;
+        }
+        .left{
+            text-align: left;
+        }
+        .virtual_right{
+            float: right;
+        }
+        .p50{
+            padding: 50px;
+        }
+        .back_brown{
+            background-color: #603813;
+            color: #DDDB00;
+        }
+        .back_green{
+            background-color: #DDDB00;
+            color: #603813;
+        }
+
+    </style>
+</head>
+<body id="game" class="back_brown">
+<h2>BREINHELD</h2>
+<h1>REACTIESPEL</h1>
+<div class="right">
+    <h2>TEST JE SNELHEID!</h2>
+</div>
+
+<section class="back_green">
+    <div class="container">
+        <h3>spelregels:</h3>
+        1. Het spel begint als je op de lichtgevende knop drukt<br>
+        2. Druk zo snel mogelijk op die knop die oplicht<br>
+        3. Snel drukken levert punten op<br>
+        4. Verkeerd drukken = een strafpunt
+    </div>
+    <div class="virtual_right">
+        <div class="left p50">
+            Druk op een knop<br>
+            om te starten
+        </div>
+    </div>
+
+</section>
+
+<script>
+    function keyHandler(keyCode) {
+        if (current == translatekey(keyCode)) {
+            location.href='game_run.html';
+        }
+    }
+    $(function(){
+        startGame();
+    });
+</script>
+
+
+</body>
+</html>
