@@ -26,41 +26,28 @@
 <div class="virtual_right">
     <div class="left p50">
         <!-- temp -->
-        <hr>
         <span id="r1" style="font-size:50px">&#9786;</span>
         <span id="r2" style="font-size:50px">&#9786;</span>
         <span id="r3" style="font-size:50px">&#9786;</span>
         <span id="r4" style="font-size:50px">&#9786;</span>
-        <hr>
         <!-- temp -->
-
-        <br>
-        Correct: <span id="correct">0</span>
-        <br>
-        Wrong: <span id="wrong">0</span>
-        <br>
-        No answer: <span id="missed">0</span>
-
     </div>
 </div>
 
-
 <script>
     function keyHandler(keyCode) {
-        if (current == translatekey(keyCode)) {
-            $('#correct').text(++correct);
-        } else {
-            $('#wrong').text(++wrong);
-        }
         ready = false;
     }
-    $(function(){
+
+    $(function () {
+        let gameTimeInSeconds = 60;
+
         currentTime = getTimestamp(0);
-        gameEndTime = getTimestamp(60);
+        gameEndTime = getTimestamp(gameTimeInSeconds);
+
         gameBlink();
     });
 </script>
-
 
 </body>
 </html>
