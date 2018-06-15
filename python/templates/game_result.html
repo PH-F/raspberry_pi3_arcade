@@ -35,34 +35,36 @@
 <body id="game" class="back_brown">
 <h2>BREINHELD</h2>
 <h1>REACTIESPEL</h1>
-<div class="right">
-    <h2>TEST JE SNELHEID!</h2>
-</div>
 
+<h2>SCORE:&nbsp;</h2>
 <section class="back_green">
     <div class="container">
-        <h3>spelregels:</h3>
-        1. Het spel begint als je op de lichtgevende knop drukt<br>
-        2. Druk zo snel mogelijk op die knop die oplicht<br>
-        3. Snel drukken levert punten op<br>
-        4. Verkeerd drukken = een strafpunt
+        <h3>{{ score }}</h3>
+        {% if score > 90 %}
+            Perfect.
+        {% elif score > 70 %}
+            Goed.
+        {% elif score > 50 %}
+            Middel.
+        {% else %}
+            Slecht
+        {% endif %}
+        UItleg
     </div>
 </section>
 <div class="virtual_right">
-    <div class="left p50">
-        Druk op een knop<br>
-        om te starten
+    <div class="left">
+        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
     </div>
 </div>
 
 <script>
     function keyHandler(keyCode) {
-        if (current == translatekey(keyCode)) {
-            location.href='game_run';
-        }
     }
     $(function(){
-        startGame();
     });
 </script>
 

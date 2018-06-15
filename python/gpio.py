@@ -32,6 +32,8 @@ class GPIOhelper:
 
     def switchOn(self,pin):
 		pin = int(pin)
+		message = ""
+
 		if pin == 1:
 			pin = 21
 		if pin == 2:
@@ -53,6 +55,8 @@ class GPIOhelper:
 
     def switchOff(self,pin):
 		pin = int(pin)
+		message = ""
+
 		if pin == 1:
 			pin = 21
 		if pin == 2:
@@ -72,7 +76,9 @@ class GPIOhelper:
 		GPIO.cleanup()
 		return message
 
-    def switchAllOff(self):
+    def reset(self):
+		message = ""
+
         GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(21, GPIO.OUT, initial=GPIO.LOW)

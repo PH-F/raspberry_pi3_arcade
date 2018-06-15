@@ -9,25 +9,31 @@ def main():
 @app.route("/movie")
 def movie():
     #led = gpio.GPIOhelper()
-    #led.switchAllOff()
+    #led.reset()
     return render_template('movie.html')
 
 @app.route("/game")
 def game():
     #led = gpio.GPIOhelper()
-    #led.switchAllOff()
+    #led.reset()
     return render_template('game_start.html')
 
 @app.route("/game_run")
 def gameRun():
-    #led = gpio.GPIOhelper()
-    #led.switchAllOff()
+    led = gpio.GPIOhelper()
+    led.reset()
     return render_template('game_run.html')
+
+@app.route("/game_result/<result>")
+def gameResult():
+    led = gpio.GPIOhelper()
+    led.reset()
+    return render_template('game_result.html', result=result)
 
 @app.route("/quiz")
 def quiz():
-    #led = gpio.GPIOhelper()
-    #led.switchAllOff()
+    led = gpio.GPIOhelper()
+    led.reset()
     return render_template('quiz.html')
 
 @app.route('/blink/<pin>',methods=['POST'])

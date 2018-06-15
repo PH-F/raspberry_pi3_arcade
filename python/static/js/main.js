@@ -1,28 +1,64 @@
 var timeout = 1000;
 var current = 0;
+var currentTime;
+var gameEndTime;
 var correct = 0;
 var wrong = 0;
 var missed = 0;
 var ready = false;
 
+/**
+ * Wait for x seconds before calling the callback method.
+ * @param time
+ * @returns {Promise<any>}
+ */
 function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }
+
+/**
+ * Give a random number between 1 and 4
+ * @returns {number}
+ */
 function rand () {
-    let val;
-    min = 1;
-    max = 4;
-    val = Math.floor(Math.random() * (max - min + 1) + min);
+    let min = 1;
+    let max = 4;
+    let val = Math.floor(Math.random() * (max - min + 1) + min);
     return val == current ? rand() : val;
 }
 
-function startGame() {
-    current = rand();
-    $('#r'+current).html('&#9787;');
-    $.post( "/switchOn/" + current);
-
+/**
+ * Get Current timestamp increment with X seconds
+ * @param seconds
+ * @returns {*}
+ */
+function getTimestamp(seconds) {
+    return Math.floor(Date.now() / 1000) + (seconds)
 }
 
+/**
+ * Start the game by clicking the highlighted ky.
+ */
+function startGame() {
+    current = rand();
+    console.log(current);
+    $.post( "/switchOn/" + current);
+}
+
+/**
+ * Calculate the gamescode
+ * @returns {number}
+ */
+function calculateScore() {
+    let total = correct + wrong + missed;
+    let incorrect = wrong + missed;
+    return Math.floor(100 / ( total / incorrect ));
+}
+
+/**
+ * recursive function that runs until time's up.
+ * It blinks the lights random.
+ */
 function gameBlink() {
     console.clear();
     sleep(timeout).then(() => {
@@ -43,10 +79,19 @@ function gameBlink() {
             ready = true;
             console.log(current);
         });
-        gameBlink();
+        if(getTimestamp() < gameEndTime) {
+            gameBlink();
+        } else {
+            location.href = 'game_result/' + calculateScore();
+        }
     });
 }
 
+/**
+ * Translate a key-char to an application number
+ * @param key int
+ * @returns {number}
+ */
 function translatekey(key) {
     switch(key) {
         case 113: return 1; break;
@@ -56,6 +101,10 @@ function translatekey(key) {
     }
 }
 
+
+/**
+ * Main navigation.
+ */
 $(function() {
     $(document).keypress(function (e) {
         if (e.which == 49) { //1
