@@ -37,13 +37,13 @@ def quiz():
     return render_template('quiz.html')
 
 @app.route("/quiz_run")
-def gameRun():
+def quizRun():
     led = gpio.GPIOhelper()
     led.reset()
     return render_template('quiz_run.html')
 
 @app.route("/quiz_result/<result>")
-def gameResult():
+def quizResult():
     led = gpio.GPIOhelper()
     led.reset()
     return render_template('quiz_result.html', result=result)
