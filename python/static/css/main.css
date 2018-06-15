@@ -1,23 +1,75 @@
-.hidden{
+.hidden {
     display: none;
 }
-.right{
+
+.right {
     text-align: right;
 }
-.left{
+
+.left {
     text-align: left;
 }
-.virtual_right{
+
+.virtual_right {
     float: right;
 }
-.p50{
+
+.p50 {
     padding: 50px;
 }
-.back_brown{
+
+.back_brown {
     background-color: #603813;
     color: #DDDB00;
 }
-.back_green{
+
+.back_green {
     background-color: #DDDB00;
     color: #603813;
+}
+
+.table {
+    display: table;
+    width: 100%;
+}
+
+.table .cell {
+    display: table-cell;
+}
+
+.table .cell:first-child {
+    width: 30%;
+}
+
+
+/*main layout*/
+#quiz_start {
+    background-size: cover;
+    background: #603813 url('../img/quiz-spelregels-achtergrond.png') no-repeat fixed center;
+}
+
+#quiz_run {
+    background-size: cover;
+    background: #DDDB00 url('../img/quiz_vraag-achtergrond.png') no-repeat fixed center;
+}
+
+#quiz_result {
+    background-size: cover;
+    background: #603813 url('../img/quiz_score-achtergrond.png') no-repeat fixed center;
+
+}
+
+#game_start {
+    background-size: cover;
+    background: #603813 url('../img/reactiespel_spelregels-achtergrond.png') no-repeat fixed center;
+}
+
+#game_run {
+    background-size: cover;
+    background: #DDDB00 url('../img/reactiespel_spelregels_background.png') no-repeat fixed center;
+}
+
+#game_result {
+    background-size: cover;
+    background: #603813 url('../img/reactiespel_score-achtergrond.png') no-repeat fixed center;
 }

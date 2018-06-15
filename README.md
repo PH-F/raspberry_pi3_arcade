@@ -50,3 +50,13 @@
 sudo python python/emulateKeyBoard.py
 
 # Build with Python
+
+
+## GamePlay
+- key 1 = game
+- key 2 = movie
+- key 3 = quiz
+- key q = option 1
+- key w = option 2
+- key e = option 3
+- key r = option 4

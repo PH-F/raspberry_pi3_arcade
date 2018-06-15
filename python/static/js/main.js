@@ -39,34 +39,37 @@ function getTimestamp(seconds) {
 /**
  * Start the game by clicking the highlighted ky.
  */
-function startGame() {
+function start() {
     // current = rand();
     // $.post( "/switchOn/" + current);
-    switchOn();
+    animation1();
 }
 
 /**
  * Animate the 4 button 1, 12, 123, 1234, 234 ,34 ,4, loop
  */
 function animation1() {
+
+    animationTime = 500;
+
     $.post( "/switchOn/1");
-    sleep(timeout).then(() => {
+    sleep(animationTime).then(() => {
         $.post("/switchOn/2");
-        sleep(timeout).then(() => {
+        sleep(animationTime).then(() => {
             $.post("/switchOn/3");
-            sleep(timeout).then(() => {
+            sleep(animationTime).then(() => {
                 $.post("/switchOn/4");
-                sleep(timeout).then(() => {
+                sleep(animationTime).then(() => {
                     //---------------------
                     $.post( "/switchOff/1");
-                    sleep(timeout).then(() => {
+                    sleep(animationTime).then(() => {
                         $.post("/switchOff/2");
-                        sleep(timeout).then(() => {
+                        sleep(animationTime).then(() => {
                             $.post("/switchOff/3");
-                            sleep(timeout).then(() => {
+                            sleep(animationTime).then(() => {
                                 $.post("/switchOff/4");
-                                sleep(timeout).then(() => {
-                                    animate();
+                                sleep(animationTime).then(() => {
+                                    animation1();
                                 });
                             });
                         });
@@ -77,14 +80,24 @@ function animation1() {
         });
     });
 }
+
 /**
- * Calculate the gamescode
+ * Calculate the quizScore
  * @returns {number}
  */
 function calculateScore() {
     let total = correct + wrong + missed;
     let incorrect = wrong + missed;
     return Math.floor(100 / ( total / incorrect ));
+}
+
+/**
+ * Calculate the gameTotal
+ * @returns {number}
+ */
+function calculateTotal() {
+    let total = correct - wrong - missed;
+    return total;
 }
 
 /**

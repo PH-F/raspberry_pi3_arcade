@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../static/css/main.css" type="text/css"/>
     <title>BREINHELD - REACTIESPEL</title>
 </head>
-<body id="game" class="back_brown">
+<body id="game_start" class="back_brown">
 <h2>BREINHELD</h2>
 <h1>REACTIESPEL</h1>
 <div class="right">
@@ -34,12 +34,13 @@
     function keyHandler(keyCode) {
         //if (current == translatekey(keyCode))
         {
-            location.href='game_run';
+            location.href = 'game_run';
         }
     }
-    $(function(){
+
+    $(function () {
         ready = true;
-        startGame();
+        start();
     });
 </script>
 

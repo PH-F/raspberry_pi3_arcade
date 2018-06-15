@@ -7,19 +7,31 @@
     <link rel="stylesheet" href="../static/css/main.css" type="text/css"/>
     <title>BREINHELD - QUIZ</title>
 </head>
-<body id="quiz" class="back_brown">
+<body id="quiz_start" class="back_brown">
 
-<!-- temp -->
-<hr>
-todo
+<section class="back_green">
+    <div class="container">
+        <h3>spelregels:</h3>
+        1. Je krijgt 5 vrag en over hersenletsel<br>
+        2. Je hebt 25 seconden per vraag<br>
+        3. Speel met de knoppen a,b,c en d<br>
+    </div>
+    <div class="container">
+        <h3>drup op een knop om te starten:</h3>
+    </div>
+</section>
 
 <script>
     function keyHandler(keyCode) {
-        alert(keyCode);
+        //if (current == translatekey(keyCode))
+        {
+            location.href = 'quiz_run';
+        }
     }
-    $(function(){
+
+    $(function () {
         ready = true;
-        //gameBlink();
+        start();
     });
 </script>
 
