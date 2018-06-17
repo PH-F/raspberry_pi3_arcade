@@ -14,9 +14,9 @@
     <h2>TEST JE SNELHEID!</h2>
 </div>
 
-<section id="mainContainer" class="back_green">
-    <div class="container">
-        <h3>spelregels:</h3>
+<section id="mainContainer" class="back_green container">
+    <div>
+        <h2>spelregels:</h2>
         1. Het spel begint als je op de lichtgevende knop drukt<br>
         2. Druk zo snel mogelijk op die knop die oplicht<br>
         3. Snel drukken levert punten op<br>
@@ -36,6 +36,11 @@
 
 <script>
     function keyHandler(keyCode) {
+        if (current == translatekey(keyCode)) {
+            correct++;
+        } else {
+            wrong++;
+        }
         ready = false;
     }
 

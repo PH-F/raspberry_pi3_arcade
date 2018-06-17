@@ -9,16 +9,73 @@
 </head>
 <body id="quiz_run" class="back_green">
 
-<!-- temp -->
-<hr>
-todo
+<h4 id="question"></h4>
+<section id="question_container" class="back_brown container">
+    <ol id="question_options">
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+    </ol>
+</section>
+<section id="wrong" class="hidden container">
+    <h3>
+        FOUT
+        <small>het goede antwoord is</small>
+    </h3>
+    <div>
+        <span class="answer"></span>:
+        <span class="wrong"></span>
+    </div>
+</section>
+<section id="correct" class="hidden container">
+    <h3>
+        goed!!
+    </h3>
+    <div>
+        <span class="answer"></span>:
+        <span class="correct"></span>
+    </div>
+</section>
+
+<footer>
+    <div id="progress">
+        <div id="bar" class="back_brown"></div>
+    </div>
+    <div id="continue" class="hidden back_brown container">
+        <h3>druk op een knop om door te gaan</h3>
+    </div>
+</footer>
 
 <script>
     function keyHandler(keyCode) {
-        alert(keyCode);
+
+        if (question_mode) {
+            //stop progressbar
+            clearInterval(timer);
+            question_mode = false;
+
+            if (current == translatekey(keyCode)) {
+                answer_correct()
+            } else {
+                answer_wrong()
+            }
+
+        } else {
+
+            if (question_nr > 5) {
+                location.href = 'quiz_result/' + calculateScore();
+            } else {
+                question_mode = true;
+                question();
+            }
+
+        }
     }
-    $(function(){
-        //gameBlink();
+
+    $(function () {
+        ready = true;
+        runQuiz();
     });
 </script>
 

@@ -25,7 +25,51 @@ class GPIOhelper:
 			sleep(float(time));
 			GPIO.output(int(pin), 0)
 		else:
-		  message = "pin not found"
+            message = "pin not found"
+
+		GPIO.cleanup()
+		return message
+
+    def animation1(self):
+		time = 0.5
+		message = ""
+        pins = ["21"]
+        pinsReverse = ["21"]
+        GPIO.setwarnings(False)
+        GPIO.setmode(GPIO.BCM)
+
+        #refactor when the pinnrs are know.
+        for x in pins:
+            GPIO.setup(int(x), GPIO.OUT, initial=GPIO.HIGH)
+            sleep(float(time));
+            GPIO.output(int(x), 0)
+
+        for x in pinsReverse:
+            GPIO.setup(int(x), GPIO.OUT, initial=GPIO.HIGH)
+            sleep(float(time));
+            GPIO.output(int(x), 0)
+
+		GPIO.cleanup()
+		return message
+
+    def animation2(self):
+		time = 0.5
+		message = ""
+        GPIO.setwarnings(False)
+        GPIO.setmode(GPIO.BCM)
+
+        for x in range(2):
+            GPIO.setup(21, GPIO.OUT, initial=GPIO.HIGH)
+            GPIO.setup(21, GPIO.OUT, initial=GPIO.HIGH)
+            GPIO.setup(21, GPIO.OUT, initial=GPIO.HIGH)
+            GPIO.setup(21, GPIO.OUT, initial=GPIO.HIGH)
+            sleep(float(time));
+
+            GPIO.output(21, 0)
+            GPIO.output(21, 0)
+            GPIO.output(21, 0)
+            GPIO.output(21, 0)
+            sleep(float(time));
 
 		GPIO.cleanup()
 		return message
@@ -78,13 +122,13 @@ class GPIOhelper:
 
     def reset(self):
         message = ""
+        pins = ["21"]
 
         GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(21, GPIO.OUT, initial=GPIO.LOW)
-        #GPIO.setup(21, GPIO.OUT, initial=GPIO.LOW)
-        #GPIO.setup(21, GPIO.OUT, initial=GPIO.LOW)
-        #GPIO.setup(21, GPIO.OUT, initial=GPIO.LOW)
+
+        for x in pins:
+            GPIO.setup(int(x), GPIO.OUT, initial=GPIO.LOW)
 
         GPIO.cleanup()
         return message

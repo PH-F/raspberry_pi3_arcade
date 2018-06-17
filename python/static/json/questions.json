@@ -1,0 +1,72 @@
+{
+  "q1": [
+    {
+      "question": "Vraag 1",
+      "options": [
+        "Optie 1.1",
+        "Optie 1.2",
+        "Optie 1.3",
+        "Optie 1,4"
+      ],
+      "answer" : 1,
+      "correct": "0: Ja, lorem ipsum",
+      "wrong": "0: Lorem ipsum"
+    }
+  ],
+  "q2": [
+    {
+      "question": "Vraag 2",
+      "options": [
+        "Optie 2.1",
+        "Optie 2.2",
+        "Optie 2.3",
+        "Optie 2,4"
+      ],
+      "answer" : 2,
+      "correct": "1: Ja, lorem ipsum",
+      "wrong": "1: Lorem ipsum"
+    }
+  ],
+  "q3": [
+    {
+      "question": "Vraag 3",
+      "options": [
+        "Optie 3.1",
+        "Optie 3.2",
+        "Optie 3.3",
+        "Optie 3,4"
+      ],
+      "answer" : 2,
+      "correct": "1: Ja, lorem ipsum",
+      "wrong": "1: Lorem ipsum"
+    }
+  ],
+  "q4": [
+    {
+      "question": "Vraag 4",
+      "options": [
+        "Optie 4.1",
+        "Optie 4.2",
+        "Optie 4.3",
+        "Optie 4,4"
+      ],
+      "answer" : 2,
+      "correct": "1: Ja, lorem ipsum",
+      "wrong": "1: Lorem ipsum"
+    }
+  ],
+  "q5": [
+    {
+      "question": "Vraag 5",
+      "options": [
+        "Optie 5.1",
+        "Optie 5.2",
+        "Optie 5.3",
+        "Optie 5,4"
+      ],
+      "answer" : 1,
+      "correct": "0: Ja, lorem ipsum",
+      "wrong": "0: Lorem ipsum"
+    }
+  ]
+}

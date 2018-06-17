@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Baloo Da';
+    src: url('../fonts/Baloo_Da/BalooDa-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Bungee';
+    src: url('../fonts/Bungee/Bungee-Regular.ttf') format('truetype');
+}
+
 .hidden {
     display: none;
 }
@@ -41,35 +51,130 @@
     width: 30%;
 }
 
+.container {
+    padding: 20px;
+    border-radius: 35px;
+}
+
+#progress {
+    background: transparent url('../img/quiz-vraag-timer-vulling.png') top center no-repeat;
+    background-size: cover;
+    border: 2px #603813 solid;
+    border-radius: 35px;
+    overflow: hidden;
+}
+
+#bar {
+    width: 1%;
+    height: 30px;
+}
+
+#question {
+    text-transform: uppercase;
+    padding: 0 40px 20px;
+    font-family: 'Bungee', sans-serif;
+}
+
+#wrong {
+    background-color: #f91628;
+    color: #ffffff;
+}
+
+#correct {
+    background-color: #8ec251;
+    color: #603813;
+}
+
+#question_options {
+    list-style-type: lower-alpha;
+}
+
+#question_options li:nth-child(0) {
+    color: lightseagreen;
+}
+
+#question_options li:nth-child(1) {
+    color: red;
+}
+
+#question_options li:nth-child(2) {
+    color: yellow;
+}
+
+#question_options li:nth-child(3) {
+    color: blue;
+}
+
+#question_options li span {
+    color: #DDDB00;
+}
+
+video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 20px brown solid;
+    border-radius: 35px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h1 {
+    line-height: 1;
+    margin: 0;
+    font-size: 8vh;
+}
+
+h2 {
+    line-height: 1;
+    margin: 0;
+    font-size: 6vh;
+}
+
+h3 {
+    line-height: 1;
+    margin: 0;
+    font-size: 5vh;
+}
+
+h4 {
+    line-height: 1;
+    margin: 0;
+    font-size: 4vh;
+}
 
 /*main layout*/
+body {
+    background-size: contain !important;
+    padding-top: 35vh;
+    font-size: 3vh;
+    font-family: 'Baloo Da', sans-serif;
+}
+
 #quiz_start {
-    background-size: cover;
     background: #603813 url('../img/quiz-spelregels-achtergrond.png') no-repeat fixed center;
 }
 
 #quiz_run {
-    background-size: cover;
     background: #DDDB00 url('../img/quiz_vraag-achtergrond.png') no-repeat fixed center;
 }
 
 #quiz_result {
-    background-size: cover;
     background: #603813 url('../img/quiz_score-achtergrond.png') no-repeat fixed center;
 
 }
 
 #game_start {
-    background-size: cover;
     background: #603813 url('../img/reactiespel_spelregels-achtergrond.png') no-repeat fixed center;
 }
 
 #game_run {
-    background-size: cover;
     background: #DDDB00 url('../img/reactiespel_spelregels_background.png') no-repeat fixed center;
 }
 
 #game_result {
-    background-size: cover;
     background: #603813 url('../img/reactiespel_score-achtergrond.png') no-repeat fixed center;
 }

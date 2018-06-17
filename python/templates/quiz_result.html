@@ -10,19 +10,19 @@
 <body id="quiz_result" class="back_brown">
 
 <section class="table">
-    <h1 class="cell container back_green">{{ score }}%</h1>
+    <h1 class="cell container back_green score">{{ score }}%</h1>
     <div class="cell container back_green">
-
-        {% if score > 90 %}
+        <h1>
+            {% if score > 90 %}
             perfect gedaan!
-        {% elif score > 70 %}
+            {% elif score > 70 %}
             goed gedaan!
-        {% elif score > 50 %}
+            {% elif score > 50 %}
             kan wel beter!
-        {% else %}
+            {% else %}
             niet zo goed gedaan!
-        {% endif %}
-        UItleg
+            {% endif %}
+        </h1>
     </div>
 </section>
 
@@ -33,9 +33,9 @@
     Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
 </div>
 
-<section class="back_green">
-    <div class="container">
-        <h2>druk op een knop op terug te gaan</h2>
+<section class="back_green container">
+    <div>
+        <h3>druk op een knop op terug te gaan</h3>
     </div>
 </section>
 

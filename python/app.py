@@ -34,7 +34,7 @@ def gameResult():
 def quiz():
     led = gpio.GPIOhelper()
     led.reset()
-    return render_template('quiz.html')
+    return render_template('quiz_start.html')
 
 @app.route("/quiz_run")
 def quizRun():
@@ -62,6 +62,11 @@ def switchOn(pin):
 def switchOff(pin):
     led = gpio.GPIOhelper()
     return led.switchOff(pin)
+
+@app.route('/animation1',methods=['POST'])
+def animation1():
+    led = gpio.GPIOhelper()
+    return led.animation1()
 
 if __name__ == "__main__":
     app.run()

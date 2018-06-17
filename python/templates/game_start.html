@@ -8,15 +8,10 @@
     <title>BREINHELD - REACTIESPEL</title>
 </head>
 <body id="game_start" class="back_brown">
-<h2>BREINHELD</h2>
-<h1>REACTIESPEL</h1>
-<div class="right">
-    <h2>TEST JE SNELHEID!</h2>
-</div>
 
-<section class="back_green">
-    <div class="container">
-        <h3>spelregels:</h3>
+<section class="back_green container">
+    <div>
+        <h2>spelregels:</h2>
         1. Het spel begint als je op de lichtgevende knop drukt<br>
         2. Druk zo snel mogelijk op die knop die oplicht<br>
         3. Snel drukken levert punten op<br>
@@ -32,10 +27,7 @@
 
 <script>
     function keyHandler(keyCode) {
-        //if (current == translatekey(keyCode))
-        {
-            location.href = 'game_run';
-        }
+        location.href = 'game_run';
     }
 
     $(function () {
