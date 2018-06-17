@@ -1,16 +1,16 @@
 {
   "q1": [
     {
-      "question": "Vraag 1",
+      "question": "Is alcohol slecht voor het brein?",
       "options": [
-        "Optie 1.1",
-        "Optie 1.2",
-        "Optie 1.3",
-        "Optie 1,4"
+        "nee joh, werkt juist ontspannend!",
+        "alleen sterke drank",
+        "wel als je dronken je kop stoot",
+        "ja, zelfs al bij matig gebruik"
       ],
       "answer" : 1,
-      "correct": "0: Ja, lorem ipsum",
-      "wrong": "0: Lorem ipsum"
+      "correct": "d:: Ja, lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+      "wrong": "D: Bij 1 glas wijn Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
     }
   ],
   "q2": [
@@ -23,8 +23,8 @@
         "Optie 2,4"
       ],
       "answer" : 2,
-      "correct": "1: Ja, lorem ipsum",
-      "wrong": "1: Lorem ipsum"
+      "correct": "a: Ja, lorem ipsum",
+      "wrong": "a: Lorem ipsum"
     }
   ],
   "q3": [
@@ -37,8 +37,8 @@
         "Optie 3,4"
       ],
       "answer" : 2,
-      "correct": "1: Ja, lorem ipsum",
-      "wrong": "1: Lorem ipsum"
+      "correct": "a: Ja, lorem ipsum",
+      "wrong": "a: Lorem ipsum"
     }
   ],
   "q4": [
@@ -51,8 +51,8 @@
         "Optie 4,4"
       ],
       "answer" : 2,
-      "correct": "1: Ja, lorem ipsum",
-      "wrong": "1: Lorem ipsum"
+      "correct": "a: Ja, lorem ipsum",
+      "wrong": "a: Lorem ipsum"
     }
   ],
   "q5": [
@@ -65,8 +65,8 @@
         "Optie 5,4"
       ],
       "answer" : 1,
-      "correct": "0: Ja, lorem ipsum",
-      "wrong": "0: Lorem ipsum"
+      "correct": "a: Ja, lorem ipsum",
+      "wrong": "a: Lorem ipsum"
     }
   ]
 }

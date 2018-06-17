@@ -177,7 +177,6 @@ function question() {
     $('#continue').addClass('hidden');
 
     $('#question').html(questions['q' + question_nr][0].question);
-    $('.answer').html(questions['q' + question_nr][0].answer);
     $('.correct').html(questions['q' + question_nr][0].correct);
     $('.wrong').html(questions['q' + question_nr][0].wrong);
 
