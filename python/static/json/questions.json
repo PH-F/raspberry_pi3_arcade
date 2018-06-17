@@ -1,44 +1,44 @@
 {
   "q1": [
     {
-      "question": "Is alcohol slecht voor het brein?",
+      "question": "Wat is niet-aangeboren-hersenletsel?",
       "options": [
-        "nee joh, werkt juist ontspannend!",
-        "alleen sterke drank",
-        "wel als je dronken je kop stoot",
-        "ja, zelfs al bij matig gebruik"
+        "een beschadiging aan de hersenen",
+        "hersenschade die door een ongeluk of ziekte is ontstaan",
+        "een beschadiging waarvan de gevolgen niet altijd zichtbaar zijn",
+        "alle antwoorden zijn juist"
       ],
-      "answer" : 1,
-      "correct": "d:: Ja, lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-      "wrong": "D: Bij 1 glas wijn Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+      "answer" : 4,
+      "correct": "d: Juist, helaas zijn de gevolgen van hersenletsel vaak groot. Ook zijn de gevolgen van het letsel vaak niet zichtbaar. Soms ontdek je pas jaren later de gevolgen van hersenletsel.",
+      "wrong": "d: Alle antwoorden zijn juist. helaas zijn de gevolgen van hersenletsel vaak groot. Ook zijn de gevolgen van het letsel vaak niet zichtbaar. Soms ontdek je pas jaren later de gevolgen van hersenletsel."
     }
   ],
   "q2": [
     {
-      "question": "Vraag 2",
+      "question": "Hoeveel Nederlanders worden jaarlijks getroffen door hersenletsel?",
       "options": [
-        "Optie 2.1",
-        "Optie 2.2",
-        "Optie 2.3",
-        "Optie 2,4"
+        "5.700",
+        "27.000",
+        "63.000",
+        "130.000"
       ],
-      "answer" : 2,
-      "correct": "a: Ja, lorem ipsum",
-      "wrong": "a: Lorem ipsum"
+      "answer" : 4,
+      "correct": "Correct! 130.000 Nederlanders worden jaarlijks getroffen door hersenletsel. Het aantal neemt helaas elk jaar toe.",
+      "wrong": "Onjuist! Meer dan je denkt. 130.000 Nederlanders worden jaarlijks getroffen door hersenletsel. Het aantal neemt helaas elk jaar toe."
     }
   ],
   "q3": [
     {
-      "question": "Vraag 3",
+      "question": "Is gamen goed voor je hersenen?",
       "options": [
-        "Optie 3.1",
-        "Optie 3.2",
-        "Optie 3.3",
-        "Optie 3,4"
+        "Nee, je krijgt er ook vierkante ogen van",
+        "Soms, maar niet van die agressieve schietspellen",
+        "Jazeker, gamen is een serieuze zaak en goed voor je hersen",
+        "Niet voor mij, ik vind deze game al spannend"
       ],
-      "answer" : 2,
-      "correct": "a: Ja, lorem ipsum",
-      "wrong": "a: Lorem ipsum"
+      "answer" : 3,
+      "correct": "c: Door te gamen wordt je beter in het onderdrukken van informatie die op dat moment niet relevant is. Hierdoor kun je sneller beslissingen nemen.",
+      "wrong": "Toch wel! c: Door te gamen wordt je beter in het onderdrukken van informatie die op dat moment niet relevant is. Hierdoor kun je sneller beslissingen nemen."
     }
   ],
   "q4": [
