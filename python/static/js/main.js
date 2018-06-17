@@ -1,5 +1,4 @@
 var timeout = 1000;
-var quiz_timeout = 25000;
 var current = 0;
 var currentTime;
 var gameEndTime;
@@ -127,6 +126,9 @@ function gameBlink() {
     });
 }
 
+/**
+ * Load the questions Json and display the 1st question.
+ */
 function runQuiz() {
 
     $.getJSON("../static/json/questions.json", function (json) {
@@ -136,15 +138,24 @@ function runQuiz() {
 
 }
 
+/**
+ * Initialize the progressbar and run this with for 24 sec 24000 ms (240 * 100)
+ */
 function progress_step() {
     var elem = document.getElementById("bar");
     var width = 1;
-    timer = setInterval(frame, 240);
-    function frame() {
+    timer = setInterval(step, 240);
+
+    /**
+     * step for each percentage, if 100% is reached clear the timer
+     * and go to the answer=wrong view.
+     */
+    function step() {
         if (width >= 100) {
             clearInterval(timer);
             //timeout, answer => wrong!
-            answer_wrong()
+            answer_wrong();
+            question_mode = false;
 
         } else {
             width++;
@@ -153,59 +164,85 @@ function progress_step() {
     }
 }
 
+/**
+ * Display the question with answer options and call the progressbar
+ */
 function question() {
 
     $('#bar').css('width','1%');
     $('#question_container').removeClass('hidden');
     $('#progress').removeClass('hidden');
-
     $('#correct').addClass('hidden');
     $('#wrong').addClass('hidden');
     $('#continue').addClass('hidden');
 
-    progress_step();
-
-    current = questions['q' + question_nr][0].answer;
-
     $('#question').html(questions['q' + question_nr][0].question);
-    $('.answerr').html(questions['q' + question_nr][0].answer);
+    $('.answer').html(questions['q' + question_nr][0].answer);
     $('.correct').html(questions['q' + question_nr][0].correct);
     $('.wrong').html(questions['q' + question_nr][0].wrong);
+
+    current = questions['q' + question_nr][0].answer;
 
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
             $('#question_options li:eq(' + j + ') span').text(questions['q' + question_nr][0].options[j]);
         }
     }
+
+    progress_step();
 }
 
+/**
+ * Display the answer=wrong container
+ */
 function answer_wrong() {
     wrong++;
+    question_nr++;
     $('#question_container').addClass('hidden');
     $('#progress').addClass('hidden');
     $('#wrong').removeClass('hidden');
     $('#continue').removeClass('hidden');
-
-    question_nr++;
 }
 
+/**
+ * Display the answer=correct container
+ */
 function answer_correct() {
     correct++;
+    question_nr++;
     $('#question_container').addClass('hidden');
     $('#progress').addClass('hidden');
     $('#correct').removeClass('hidden');
     $('#continue').removeClass('hidden');
-
-    question_nr++;
 }
 
-function answer(question) {
-    //if correct..
-    //display correct block
-    //else
-    //display error block
+/**
+ * Implement what happens whn you press a key on the quiz page when the quis is active.
+ * @param keyCode
+ */
+function questionKeyHandler (keyCode) {
+    if (question_mode) {
 
-    //on keypress... question++
+        //stop progressbar
+        clearInterval(timer);
+        question_mode = false;
+
+        if (current == translatekey(keyCode)) {
+            answer_correct()
+        } else {
+            answer_wrong()
+        }
+
+    } else {
+
+        if (question_nr > 5) {
+            location.href = 'quiz_result/' + calculateScore();
+        } else {
+            question_mode = true;
+            question();
+        }
+
+    }
 }
 
 /**

@@ -49,28 +49,7 @@
 
 <script>
     function keyHandler(keyCode) {
-
-        if (question_mode) {
-            //stop progressbar
-            clearInterval(timer);
-            question_mode = false;
-
-            if (current == translatekey(keyCode)) {
-                answer_correct()
-            } else {
-                answer_wrong()
-            }
-
-        } else {
-
-            if (question_nr > 5) {
-                location.href = 'quiz_result/' + calculateScore();
-            } else {
-                question_mode = true;
-                question();
-            }
-
-        }
+        questionKeyHandler(keyCode)
     }
 
     $(function () {

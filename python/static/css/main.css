@@ -57,8 +57,8 @@
 }
 
 #progress {
-    background: transparent url('../img/quiz-vraag-timer-vulling.png') top center no-repeat;
-    background-size: cover;
+    background: transparent url('../img/quiz-vraag-timer-vulling.png') top right no-repeat;
+    background-size: auto 100%;
     border: 2px #603813 solid;
     border-radius: 35px;
     overflow: hidden;
