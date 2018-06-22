@@ -52,8 +52,8 @@
 }
 
 .container {
-    padding: 20px;
-    border-radius: 35px;
+    padding: 20px 20px 10px 20px;
+    border-radius: 20px;
 }
 
 #progress {
@@ -109,13 +109,24 @@
     color: #DDDB00;
 }
 
+#quiz_result .cell{
+	vertical-align: top;
+}
+#quiz_result div.cell .container{
+	padding:10px 20px 5px 20px;
+	margin-left:10px;
+}
+.textblock {
+	padding: 0 20px 20px 20px;
+}
+
 video {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     border: 20px brown solid;
-    border-radius: 35px;
+    border-radius: 20;
 }
 
 section {
@@ -146,12 +157,19 @@ h4 {
     font-size: 4vh;
 }
 
+ul {
+    margin-top: 15px;
+}
+
 /*main layout*/
 body {
     background-size: contain !important;
-    padding-top: 35vh;
+    padding-top: 32vh;
     font-size: 3vh;
     font-family: 'Baloo Da', sans-serif;
+    
+    max-width: 1024px;
+    margin: auto;
 }
 
 #quiz_start {
@@ -159,7 +177,7 @@ body {
 }
 
 #quiz_run {
-    background: #DDDB00 url('../img/quiz_vraag-achtergrond.png') no-repeat fixed center;
+    background: #603813 url('../img/quiz_vraag-achtergrond.png') no-repeat fixed center;
 }
 
 #quiz_result {
@@ -172,7 +190,7 @@ body {
 }
 
 #game_run {
-    background: #DDDB00 url('../img/reactiespel_spelregels_background.png') no-repeat fixed center;
+    background: #603813 url('../img/reactiespel_spelregels_background.png') no-repeat fixed center;
 }
 
 #game_result {

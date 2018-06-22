@@ -10,14 +10,14 @@
 <body id="game_result" class="back_brown">
 
 <section class="table">
-    <h2 class="cell">SCORE:&nbsp;</h2>
+    <h2 class="cell" style="visibility:hidden">SCORE:&nbsp;</h2>
     <div class="cell container back_green">
         <h1>{{ score }}</h1>
-        {% if score > 90 %}
+        {% if score > 50 %}
             Perfect.
-        {% elif score > 70 %}
+        {% elif score > 40 %}
             Goed.
-        {% elif score > 50 %}
+        {% elif score > 30 %}
             Middel.
         {% else %}
             Slecht
@@ -26,7 +26,7 @@
     </div>
 </section>
 
-<div class="left">
+<div class="left textblock">
     Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
     Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
     Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
@@ -35,7 +35,7 @@
 
 <script>
     function keyHandler(keyCode) {
-        location.href = 'game';
+        location.href = '/game';
     }
 
     $(function () {

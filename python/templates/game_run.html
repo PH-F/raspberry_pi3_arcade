@@ -9,7 +9,7 @@
 </head>
 <body id="game_run" class="back_brown">
 
-<section id="mainContainer" class="back_green container">
+<!-- <section id="mainContainer" class="back_green container">
     <div>
         <h2>spelregels:</h2>
         1. Het spel begint als je op de lichtgevende knop drukt<br>
@@ -17,10 +17,12 @@
         3. Snel drukken levert punten op<br>
         4. Verkeerd drukken = een strafpunt
     </div>
-</section>
+</section> -->
 
-<div class="virtual_right">
-    <div class="left p50">
+<div style="height:200px;margin:50px 20px;" class="back_green"> 
+	<h1>Je hebt nog: <span id="sec_left"></span> sec..</h1>
+
+    <div class="left">
         <!-- temp -->
         <span id="r1" style="font-size:50px">&#9786;</span>
         <span id="r2" style="font-size:50px">&#9786;</span>
@@ -28,7 +30,9 @@
         <span id="r4" style="font-size:50px">&#9786;</span>
         <!-- temp -->
     </div>
+
 </div>
+
 
 <script>
     function keyHandler(keyCode) {
@@ -41,7 +45,7 @@
     }
 
     $(function () {
-        let gameTimeInSeconds = 60;
+        var gameTimeInSeconds = 60;
 
         currentTime = getTimestamp(0);
         gameEndTime = getTimestamp(gameTimeInSeconds);

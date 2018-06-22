@@ -37,7 +37,7 @@ function rand() {
  * @returns {*}
  */
 function getTimestamp(seconds) {
-    return Math.floor(Date.now() / 1000) + (seconds)
+    return Math.floor(Date.now() / 1000) + (seconds);
 }
 
 /**
@@ -81,8 +81,7 @@ function animation2() {
  */
 function calculateScore() {
     let total = correct + wrong + missed;
-    let incorrect = wrong + missed;
-    return Math.floor(100 / (total / incorrect));
+    return Math.floor(correct * (100 / total));
 }
 
 /**
@@ -90,7 +89,7 @@ function calculateScore() {
  * @returns {number}
  */
 function calculateTotal() {
-    let total = correct - wrong - missed;
+    let total = correct; // - wrong - missed;
     return total;
 }
 
@@ -99,6 +98,9 @@ function calculateTotal() {
  * It blinks the lights random.
  */
 function gameBlink() {
+	
+	$('#sec_left').text( gameEndTime - getTimestamp(0) );
+    
     console.clear();
     sleep(timeout).then(() => {
         current = rand();
@@ -118,7 +120,7 @@ function gameBlink() {
             ready = true;
             console.log(current);
         });
-        if (getTimestamp() < gameEndTime) {
+        if (getTimestamp(0) < gameEndTime) {
             gameBlink();
         } else {
             location.href = 'game_result/' + calculateTotal();

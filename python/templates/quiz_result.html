@@ -11,8 +11,9 @@
 
 <section class="table">
     <h1 class="cell container back_green score">{{ score }}%</h1>
-    <div class="cell container back_green">
-        <h1>
+    <div class="cell">
+    <div class="container back_green">
+        <h2>
             {% if score > 90 %}
             perfect gedaan!
             {% elif score > 70 %}
@@ -22,11 +23,12 @@
             {% else %}
             niet zo goed gedaan!
             {% endif %}
-        </h1>
+        </h2>
+    </div>
     </div>
 </section>
 
-<div class="left">
+<div class="left textblock">
     Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
     Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
     Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
@@ -42,7 +44,7 @@
 
 <script>
     function keyHandler(keyCode) {
-        location.href = 'quiz';
+        location.href = '/quiz';
     }
 
     $(function () {

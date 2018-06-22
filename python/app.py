@@ -24,11 +24,11 @@ def gameRun():
     led.reset()
     return render_template('game_run.html')
 
-@app.route("/game_result/<result>")
-def gameResult():
+@app.route('/game_result/<result>')
+def gameResult(result):
     led = gpio.GPIOhelper()
     led.reset()
-    return render_template('game_result.html', result=result)
+    return render_template('game_result.html', score=int(result))
 
 @app.route("/quiz")
 def quiz():
@@ -42,11 +42,11 @@ def quizRun():
     led.reset()
     return render_template('quiz_run.html')
 
-@app.route("/quiz_result/<result>")
-def quizResult():
+@app.route('/quiz_result/<result>')
+def quizResult(result):
     led = gpio.GPIOhelper()
     led.reset()
-    return render_template('quiz_result.html', result=result)
+    return render_template('quiz_result.html', score=int(result))
 
 @app.route('/blink/<pin>',methods=['POST'])
 def blink(pin):
