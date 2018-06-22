@@ -33,8 +33,8 @@ class GPIOhelper:
   def animation1(self):
     time = 0.5
     message = ""
-    pins = ["25","1","7","8"]
-    pinsReverse = ["8","7","1","25"]
+    pins = ["25","24","7","8"]
+    pinsReverse = ["8","7","24","25"]
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BCM)
 
@@ -58,13 +58,13 @@ class GPIOhelper:
 
     for x in range(2):
       GPIO.setup(25, GPIO.OUT, initial=GPIO.HIGH)
-      GPIO.setup(1, GPIO.OUT, initial=GPIO.HIGH)
+      GPIO.setup(24, GPIO.OUT, initial=GPIO.HIGH)
       GPIO.setup(7, GPIO.OUT, initial=GPIO.HIGH)
       GPIO.setup(8, GPIO.OUT, initial=GPIO.HIGH)
       sleep(float(time));
 
       GPIO.output(25, 0)
-      GPIO.output(1, 0)
+      GPIO.output(24, 0)
       GPIO.output(7, 0)
       GPIO.output(8, 0)
       sleep(float(time));
@@ -79,13 +79,13 @@ class GPIOhelper:
     if pin == 1:
       pin = 25
     if pin == 2:
-      pin = 1
+      pin = 24
     if pin == 3:
       pin = 7
     if pin == 4:
       pin = 8
 
-    if pin in [25,1,7,8]:
+    if pin in [25,24,7,8]:
       GPIO.setwarnings(False)
       GPIO.setmode(GPIO.BCM)
       GPIO.setup(int(pin), GPIO.OUT, initial=GPIO.HIGH)
@@ -102,13 +102,13 @@ class GPIOhelper:
     if pin == 1:
       pin = 25
     if pin == 2:
-      pin = 1
+      pin = 24
     if pin == 3:
       pin = 7
     if pin == 4:
       pin = 8
 
-    if pin in [25,1,7,8]:
+    if pin in [25,24,7,8]:
       GPIO.setwarnings(False)
       GPIO.setmode(GPIO.BCM)
       GPIO.setup(int(pin), GPIO.OUT, initial=GPIO.LOW)
@@ -120,7 +120,7 @@ class GPIOhelper:
 
   def reset(self):
     message = ""
-    pins = ["25","1","7","8"]
+    pins = ["25","24","7","8"]
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BCM)
 

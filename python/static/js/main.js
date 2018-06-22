@@ -48,7 +48,7 @@ function getTimestamp(seconds) {
 function start() {
     // current = rand();
     // $.post( "/switchOn/" + current);
-    animation1();
+    //animation1();
 }
 
 /**

@@ -7,7 +7,7 @@ mode = sys.argv[2]
 time = sys.argv[3]
 
 
-if pin in ["21","11111","111122","11112223"]:
+if pin in ["7","8","25","24"]:
   GPIO.setwarnings(False)
   GPIO.setmode(GPIO.BCM)
   if mode == "on":
