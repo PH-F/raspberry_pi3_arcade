@@ -20,28 +20,26 @@
     11. sudo chown pi:pi www
     12. cd /var/www
     13. git clone https://github.com/PH-F/raspberry_pi3_arcade.git
-
-```update to run with apache```
-
-    16. sudo nano /etc/apache2/sites-available/000-default.conf
-        1. replace /var/www/html -> /var/www/app/public
-        2. add <Directory /var/www/app>AllowOverride All</Directory> above the </VirtualHost>
-        3. sudo /etc/init.d/apache2 restart
-    17. sudo usermod -a -G gpio www-data
-    18. sudo /etc/init.d/apache2 restart
-    19. sudo chmod 777 /sys/class/gpio/gpio18/
-    20. sudo apt-get install python-dev python-pip gcc
-    21. sudo pip install evdev
-    22. sudo modprobe uinput
+    14. mv /var/www/raspberry_pi3_arcade /var/www/app
+    15. test with python /var/www/app/python/app.py & open the browser to http://localhost:5000
+    
 9. Start the pythonscript at boot
 	1. sudo chmod 755 /var/www/app/boot.sh
 	2. sudo mkdir var/log/cron
 	3. sudo chmod 777 var/log/cron/
 	4. sudo crontab -e 
 		Add:  @reboot sh /var/www/app/boot.sh > /var/log/cron/cronlog 2>&1
+		
 10. Start the browser at boot
-	1. in the terminal edit ~/.bashrc
-	2. Add at the bottom:  chromium-browser --kiosk localhost
+	1. Open the teminal and type: 	sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
+    2. 
+    ```
+    #@xscreensaver -no-splash # comment this line out to disable screensaver
+    @xset s off
+    @xset -dpms
+    @xset s noblank
+    @chromium-browser --incognito --kiosk http://localhost:5000
+	```
 	3. save and reboot
 	4. Note:   crtl W   will close the browser!
 
@@ -49,8 +47,7 @@
 # Run (in the background)
 sudo python python/emulateKeyBoard.py
 
-# Build with Python
-
+# Build with Python & Javascript
 
 ## GamePlay
 - key 1 = game
