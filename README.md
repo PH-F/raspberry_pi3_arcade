@@ -29,6 +29,11 @@
 	3. sudo chmod 777 var/log/cron/
 	4. sudo crontab -e 
 		Add:  @reboot sh /var/www/app/boot.sh > /var/log/cron/cronlog 2>&1
+	5. sudo nano /etc/rc.local
+	    before exit 0 add:
+	    ```
+	    python /var/www/app/python/app.py
+	    ```
 		
 10. Start the browser at boot
 	1. Open the teminal and type: 	sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
