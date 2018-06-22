@@ -40,13 +40,13 @@ def button16(channel):
     ui.syn()
 
 def button20(channel):
-    ui.write(e.EV_KEY, e.KEY_3 ,1)
-    ui.write(e.EV_KEY, e.KEY_3 ,0)
+    ui.write(e.EV_KEY, e.KEY_2 ,1)
+    ui.write(e.EV_KEY, e.KEY_2 ,0)
     ui.syn()
 
 def button21(channel):
-    ui.write(e.EV_KEY, e.KEY_2 ,1)
-    ui.write(e.EV_KEY, e.KEY_2 ,0)
+    ui.write(e.EV_KEY, e.KEY_3 ,1)
+    ui.write(e.EV_KEY, e.KEY_3 ,0)
     ui.syn()
 
 GPIO.add_event_detect(5, GPIO.FALLING, callback = button5, bouncetime = 500)   
