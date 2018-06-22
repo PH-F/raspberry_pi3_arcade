@@ -37,20 +37,22 @@
 <script>
     function keyHandler(keyCode) {
         if (current == translatekey(keyCode)) {
-            correct++;
+            answers[currentAnswer] = 1;
         } else {
-            wrong++;
+            answers[currentAnswer] = 0;
         }
         ready = false;
     }
 
     $(function () {
         var gameTimeInSeconds = 60;
+        answers = new Array();
+        answers[currentAnswer] = 0;
 
         currentTime = getTimestamp(0);
         gameEndTime = getTimestamp(gameTimeInSeconds);
 
-        gameBlink();
+        gameBlink(0);
     });
 </script>
 

@@ -10,6 +10,8 @@ var questions;
 var timer;
 var question_mode = true;
 var question_nr = 1;
+var answers;
+var currentAnswer = 0;
 
 /**
  * Wait for x seconds before calling the callback method.
@@ -98,7 +100,8 @@ function calculateTotal() {
  * It blinks the lights random.
  */
 function gameBlink() {
-	
+
+
 	$('#sec_left').text( gameEndTime - getTimestamp(0) );
     
     console.clear();
@@ -121,8 +124,15 @@ function gameBlink() {
             console.log(current);
         });
         if (getTimestamp(0) < gameEndTime) {
+            currentAnswer++;
             gameBlink();
         } else {
+
+            correct = 0;
+            answers.forEach(function(val){
+                correct = correct + val;
+            })
+
             location.href = 'game_result/' + calculateTotal();
         }
     });
