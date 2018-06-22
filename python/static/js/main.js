@@ -101,7 +101,7 @@ function calculateTotal() {
  */
 function gameBlink() {
 
-
+    answers[currentAnswer] = 0;
 	$('#sec_left').text( gameEndTime - getTimestamp(0) );
     
     console.clear();
@@ -131,7 +131,7 @@ function gameBlink() {
             correct = 0;
             answers.forEach(function(val){
                 correct = correct + val;
-            })
+            });
 
             location.href = 'game_result/' + calculateTotal();
         }
