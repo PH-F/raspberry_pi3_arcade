@@ -170,12 +170,13 @@ body {
     margin: auto;
 }
 
+
 #quiz_start {
     background: #603813 url('../img/quiz-spelregels-achtergrond.png') no-repeat fixed center;
 }
 
 #quiz_run {
-    background: #603813 url('../img/quiz_vraag-achtergrond.png') no-repeat fixed center;
+    background: #8ec251 url('../img/quiz_vraag-achtergrond.png') no-repeat fixed center;
 }
 
 #quiz_result {
