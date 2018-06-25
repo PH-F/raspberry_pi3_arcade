@@ -286,9 +286,9 @@ $(function () {
     $(document).keypress(function (e) {
         if (e.which == 49) { //1
             location.href = '/game'
-        } else if (e.which == 50) { //2
+        } else if (e.which == 51) { //2
             location.href = '/movie'
-        } else if (e.which == 51) { //3
+        } else if (e.which == 50) { //3
             location.href = '/quiz'
         } else if (ready) {
             keyHandler(e.which)

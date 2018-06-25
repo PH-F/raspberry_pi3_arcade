@@ -125,8 +125,6 @@ video {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border: 20px brown solid;
-    border-radius: 20;
 }
 
 section {
