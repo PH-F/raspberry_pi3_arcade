@@ -23,8 +23,8 @@
         "130.000"
       ],
       "answer" : 4,
-      "correct": "Correct! 130.000 Nederlanders worden jaarlijks getroffen door hersenletsel. Het aantal neemt helaas elk jaar toe.",
-      "wrong": "Onjuist! Meer dan je denkt. 130.000 Nederlanders worden jaarlijks getroffen door hersenletsel. Het aantal neemt helaas elk jaar toe."
+      "correct": "d: Correct! 130.000 Nederlanders worden jaarlijks getroffen door hersenletsel. Het aantal neemt helaas elk jaar toe.",
+      "wrong": "d: Onjuist! Meer dan je denkt. 130.000 Nederlanders worden jaarlijks getroffen door hersenletsel. Het aantal neemt helaas elk jaar toe."
     }
   ],
   "q3": [
@@ -43,30 +43,30 @@
   ],
   "q4": [
     {
-      "question": "Vraag 4",
+      "question": "Met hersenletsel kun je niet meer goed sporten",
       "options": [
-        "Optie 4.1",
-        "Optie 4.2",
-        "Optie 4.3",
-        "Optie 4,4"
+        "Nee, je zit voor de rest van je leven op je luie gat.",
+        "Nee, met hersenletsel ben je zo moe dat het meestal niet meer lukt om te sporten.",
+        "Onzin, er zijn volop mogelijkheden om te sporten met hersenletsel.",
+        "Jawel, maar alleen met lotgenoten."
       ],
-      "answer" : 2,
-      "correct": "a: Ja, lorem ipsum",
-      "wrong": "a: Lorem ipsum"
+      "answer" : 3,
+      "correct": "c: Juist, er zijn veel sporten mogeljk met hersenletsel. Breinlijn.nl kan je helpen met het vinden van de juiste sport.",
+      "wrong": "c: Onjuist, er zijn veel sporten mogeljk met hersenletsel. Breinlijn.nl kan je helpen met het vinden van de juiste sport."
     }
   ],
   "q5": [
     {
-      "question": "Vraag 5",
+      "question": "Van hersenletsel kun je volledig herstellen als je maar hard genoeg oefent.",
       "options": [
-        "Optie 5.1",
-        "Optie 5.2",
-        "Optie 5.3",
-        "Optie 5,4"
+        "Ja, rust roest. Hoe meer je traint des te beter je opknapt.",
+        "Nee, de gevolgen van hersenletsel zijn voor iedereen anders.",
+        "Nee, maar door revalidatie kun je er het maximale uithalen.",
+        "Ja, binnen een paar maanden herstellen de meeste mensen."
       ],
-      "answer" : 1,
-      "correct": "a: Ja, lorem ipsum",
-      "wrong": "a: Lorem ipsum"
+      "answer" : 3,
+      "correct": "c: Juist, vrijwel niemand is 100% de oude na hersenletsel, maar met de juiste ondersteuning kun je ver komen. Kijk maar eens op Breinlijn.nl",
+      "wrong": "c: Fout, vrijwel niemand is 100% de oude na hersenletsel, maar met de juiste ondersteuning kun je ver komen. Kijk maar eens op Breinlijn.nl"
     }
   ]
 }
