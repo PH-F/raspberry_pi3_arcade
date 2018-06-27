@@ -18,7 +18,7 @@ class GPIOhelper:
     if pin == 4:
       pin = 8
 
-    if pin in [25,1,7,8]:
+    if pin in [25,24,7,8]:
       GPIO.setwarnings(False)
       GPIO.setmode(GPIO.BCM)
       GPIO.setup(int(pin), GPIO.OUT, initial=GPIO.HIGH)

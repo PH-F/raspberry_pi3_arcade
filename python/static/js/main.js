@@ -13,6 +13,9 @@ var question_nr = 1;
 var answers;
 var currentAnswer = 0;
 var page = "";
+var audioElement = document.createElement('audio');
+var audioElement2 = document.createElement('audio');
+
 /**
  * Wait for x seconds before calling the callback method.
  * @param time
@@ -42,13 +45,31 @@ function getTimestamp(seconds) {
     return Math.floor(Date.now() / 1000) + (seconds);
 }
 
+function playAudio(file, repeat, meanwhile) {
+    if(meanwhile) {
+        audioElement2.setAttribute('src', file);
+        audioElement2.play();
+    }else {
+        audioElement.setAttribute('src', file);
+        audioElement.play();
+        if (repeat) {
+            audioElement.addEventListener('ended', function () {
+                this.play();
+            }, false);
+        }
+    }
+}
+
 /**
  * Start the game by clicking the highlighted ky.
  */
-function start() {
-    // current = rand();
-    // $.post( "/switchOn/" + current);
-    //animation1();
+function start(page) {
+    if(page == "game"){
+        playAudio('../static/audio/start-quiz.mp3', true, false);
+    }
+    if(page == "quiz"){
+        playAudio('../static/audio/start-reactgame.mp3', true, false);
+    }
 }
 
 /**
@@ -104,7 +125,7 @@ function gameBlink() {
     answers[currentAnswer] = 0;
 	$('#sec_left').text( gameEndTime - getTimestamp(0) );
     
-    console.clear();
+    // console.clear();
     sleep(timeout).then(() => {
         current = rand();
 
@@ -114,13 +135,13 @@ function gameBlink() {
         $('#r' + current + ' .btnoff').hide();
         $('#r' + current + ' .btnon').show();
 
-        $.post("/blink/" + current, function (data) {
+        //$.post("/blink/" + current, function (data) {
             if (ready) {
                 $('#missed').text(++missed);
             }
             ready = true;
             console.log(current);
-        });
+        //});
         if (getTimestamp(0) < gameEndTime) {
             currentAnswer++;
             gameBlink();
@@ -205,6 +226,8 @@ function question() {
  * Display the answer=wrong container
  */
 function answer_wrong() {
+    playAudio('../static/audio/wrong-answer.mp3', false, true);
+
     wrong++;
     question_nr++;
     $('#question_container').addClass('hidden');
@@ -217,6 +240,8 @@ function answer_wrong() {
  * Display the answer=correct container
  */
 function answer_correct() {
+    playAudio('../static/audio/correct-answer.mp3', false, true);
+
     correct++;
     question_nr++;
     $('#question_container').addClass('hidden');
