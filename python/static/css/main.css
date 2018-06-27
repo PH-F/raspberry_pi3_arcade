@@ -174,8 +174,8 @@ body {
     max-width: 1024px;
 
     /* The 95% and 2vh can vary, depending on the topscreen offset  */
-    background-size: auto 95%!important;
-    margin-top: 2vh!important;;
+    background-size: auto 100%!important;
+    margin-top: 9vh!important;;
 }
 
 
