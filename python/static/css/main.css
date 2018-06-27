@@ -20,6 +20,10 @@
     text-align: left;
 }
 
+.center {
+    text-align: center;
+}
+
 .virtual_right {
     float: right;
 }
@@ -161,13 +165,17 @@ ul {
 
 /*main layout*/
 body {
-    background-size: contain !important;
     padding-top: 32vh;
     font-size: 3vh;
     font-family: 'Baloo Da', sans-serif;
-    
-    max-width: 1024px;
     margin: auto;
+
+    /* max screen width for center block */
+    max-width: 1024px;
+
+    /* The 95% and 2vh can vary, depending on the topscreen offset  */
+    background-size: auto 95%!important;
+    margin-top: 2vh!important;;
 }
 
 
@@ -176,7 +184,7 @@ body {
 }
 
 #quiz_run {
-    background: #8ec251 url('../img/quiz_vraag-achtergrond.png') no-repeat fixed center;
+    background: #DDDB00 url('../img/quiz_vraag-achtergrond.png') no-repeat fixed center;
 }
 
 #quiz_result {

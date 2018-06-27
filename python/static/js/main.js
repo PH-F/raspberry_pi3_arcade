@@ -12,7 +12,7 @@ var question_mode = true;
 var question_nr = 1;
 var answers;
 var currentAnswer = 0;
-
+var page = "";
 /**
  * Wait for x seconds before calling the callback method.
  * @param time
@@ -108,13 +108,11 @@ function gameBlink() {
     sleep(timeout).then(() => {
         current = rand();
 
-        //temp
-        $('#r1').html('&#9786;');
-        $('#r2').html('&#9786;');
-        $('#r3').html('&#9786;');
-        $('#r4').html('&#9786;');
-        $('#r' + current).html('&#9787;');
-        //temp
+        //color screen buttons
+        $('.btnoff').show();
+        $('.btnon').hide();
+        $('#r' + current + ' .btnoff').hide();
+        $('#r' + current + ' .btnon').show();
 
         $.post("/blink/" + current, function (data) {
             if (ready) {
@@ -283,6 +281,14 @@ function translatekey(key) {
  * Main navigation.
  */
 $(function () {
+
+    if(page=="") {
+        //After 90 sec always return to index!
+        sleep(90000).then(() => {
+            location.href = '/'
+        });
+    }
+
     $(document).keypress(function (e) {
         if (e.which == 49) { //1
             location.href = '/game'
