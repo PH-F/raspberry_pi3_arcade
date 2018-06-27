@@ -163,6 +163,10 @@ ul {
     margin-top: 15px;
 }
 
+.btnoff, .btnon{
+    width:80px;
+}
+
 /*main layout*/
 body {
     padding-top: 32vh;
@@ -174,8 +178,9 @@ body {
     max-width: 1024px;
 
     /* The 95% and 2vh can vary, depending on the topscreen offset  */
-    background-size: auto 100%!important;
-    margin-top: 9vh!important;;
+    background-position-y: 120px!important;
+    background-size: auto 90%!important;
+    margin-top: 10vh!important;;
 }
 
 
