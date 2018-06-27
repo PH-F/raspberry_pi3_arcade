@@ -12,7 +12,7 @@ class GPIOhelper:
     if pin == 1:
       pin = 25
     if pin == 2:
-      pin = 1
+      pin = 24
     if pin == 3:
       pin = 7
     if pin == 4:
