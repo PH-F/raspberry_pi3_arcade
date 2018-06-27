@@ -135,13 +135,13 @@ function gameBlink() {
         $('#r' + current + ' .btnoff').hide();
         $('#r' + current + ' .btnon').show();
 
-        //$.post("/blink/" + current, function (data) {
+        $.post("/blink/" + current, function (data) {
             if (ready) {
                 $('#missed').text(++missed);
             }
             ready = true;
             console.log(current);
-        //});
+        });
         if (getTimestamp(0) < gameEndTime) {
             currentAnswer++;
             gameBlink();
