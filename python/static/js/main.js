@@ -309,7 +309,7 @@ $(function () {
 
     if(page=="") {
         //After 90 sec always return to index!
-        sleep(90000).then(() => {
+        sleep(120000).then(() => {
             location.href = '/'
         });
     }
