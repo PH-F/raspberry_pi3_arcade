@@ -68,7 +68,7 @@ function start(page) {
         playAudio('../static/audio/start-quiz.mp3', true, false);
     }
     if(page == "quiz"){
-        playAudio('../static/audio/start-reactgame.mp3', true, false);
+
     }
 }
 
