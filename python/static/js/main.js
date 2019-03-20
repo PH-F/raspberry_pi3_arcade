@@ -116,6 +116,22 @@ function calculateTotal() {
     return total;
 }
 
+function switchOn(pin) {
+
+    $.post("/blink/" + pin, function (data) {
+        ready = true;
+        console.log(data);
+    });
+}
+
+function switchOff(pin) {
+    $.post("/switchOff/" + pin, function (data) {
+        ready = true;
+        console.log(data);
+    });
+
+}
+
 /**
  * recursive function that runs until time's up.
  * It blinks the lights random.
@@ -315,11 +331,8 @@ $(function () {
     }
 
     $(document).keypress(function (e) {
-        if (e.which == 49) { //1
-            location.href = '/game'
-        } else if (e.which == 51) { //2
-            location.href = '/movie'
-        } else if (e.which == 50) { //3
+        console.log(e.which);
+        if (e.which == 50) { //3
             location.href = '/quiz'
         } else if (ready) {
             keyHandler(e.which)

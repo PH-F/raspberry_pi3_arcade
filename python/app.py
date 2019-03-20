@@ -6,30 +6,6 @@ app = Flask(__name__)
 def main():
     return render_template('index.html')
 
-@app.route("/movie")
-def movie():
-    #led = gpio.GPIOhelper()
-    #led.reset()
-    return render_template('movie.html')
-
-@app.route("/game")
-def game():
-    #led = gpio.GPIOhelper()
-    #led.reset()
-    return render_template('game_start.html')
-
-@app.route("/game_run")
-def gameRun():
-    led = gpio.GPIOhelper()
-    led.reset()
-    return render_template('game_run.html')
-
-@app.route('/game_result/<result>')
-def gameResult(result):
-    led = gpio.GPIOhelper()
-    led.reset()
-    return render_template('game_result.html', score=int(result))
-
 @app.route("/quiz")
 def quiz():
     led = gpio.GPIOhelper()
