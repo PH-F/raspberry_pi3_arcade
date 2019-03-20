@@ -9,7 +9,7 @@ def main():
     return render_template('index.html')
 
 @app.route("/quiz")
-def main():
+def quiz():
     led = gpio.GPIOhelper()
     led.reset()
     return render_template('quiz_start.html')
