@@ -1,72 +1,86 @@
 {
   "q1": [
     {
-      "question": "Wat is niet-aangeboren-hersenletsel?",
+      "question": "Een patiënt mag altijd weten wie zijn medisch dossier heeft ingezien",
       "options": [
-        "een beschadiging aan de hersenen",
-        "hersenschade die door een ongeluk of ziekte is ontstaan",
-        "een beschadiging waarvan de gevolgen niet altijd zichtbaar zijn",
-        "alle antwoorden zijn juist"
+        "Waar",
+        "Niet waar",
+        "",
+        ""
       ],
-      "answer" : 4,
-      "correct": "d: Juist, helaas zijn de gevolgen van hersenletsel vaak groot. Ook zijn de gevolgen van het letsel vaak niet zichtbaar. Soms ontdek je pas jaren later de gevolgen van hersenletsel.",
-      "wrong": "d: Alle antwoorden zijn juist. helaas zijn de gevolgen van hersenletsel vaak groot. Ook zijn de gevolgen van het letsel vaak niet zichtbaar. Soms ontdek je pas jaren later de gevolgen van hersenletsel."
+      "answer" : 1,
+      "correct": "Waar! Sterker nog, in de NEN7513 is het zelfs verplicht gesteld dat er een log bestand wordt bijgehouden. Daarmee is altijd te traceren wie het dossier inzag. Weet je ook zeker of dit ook voor jouw EPD geldt?",
+      "wrong": "Fout! In de NEN7513 is het zelfs verplicht gesteld dat er een log bestand wordt bijgehouden. Daarmee is altijd te traceren wie het dossier inzag. Weet je ook zeker of dit ook voor jouw EPD geldt?"
     }
   ],
   "q2": [
     {
-      "question": "Hoeveel Nederlanders worden jaarlijks getroffen door hersenletsel?",
+      "question": "Een inlog van een Elektronisch Patiënt Dossier delen is toegestaan?",
       "options": [
-        "5.700",
-        "27.000",
-        "63.000",
-        "130.000"
+        "Nee, zeker niet! Alleen ‘named user licenses’ zijn toegestaan",
+        "Ja, maar alleen als het om adresgegevens gaat",
+        "Ja, maar dan moet je wel een logboek bijhouden",
+        "Nee, patiënt-informatie mag je nooit delen"
       ],
-      "answer" : 4,
-      "correct": "d: Correct! 130.000 Nederlanders worden jaarlijks getroffen door hersenletsel. Het aantal neemt helaas elk jaar toe.",
-      "wrong": "d: Onjuist! Meer dan je denkt. 130.000 Nederlanders worden jaarlijks getroffen door hersenletsel. Het aantal neemt helaas elk jaar toe."
+      "answer" : 3,
+      "correct": "Ja, in principe mag je een account delen, maar dan moet je precies bijhouden wie wanneer inlogt! Ook mag je niet zomaar alle dossiers bekijken. Een persoonlijke inlog op naam is handiger en veiliger!",
+      "wrong": "Fout! In principe mag je een account delen, maar dan moet je precies bijhouden wie wanneer inlogt! Ook mag je niet zomaar alle dossiers bekijken. Een persoonlijke inlog op naam is handiger en veiliger! "
     }
   ],
   "q3": [
     {
-      "question": "Is gamen goed voor je hersenen?",
+      "question": "Zorginstellingen moeten een Data Protection Impact Assesment (DPIA) uit te voeren.",
       "options": [
-        "Nee, je krijgt er ook vierkante ogen van",
-        "Soms, maar niet van die agressieve schietspellen",
-        "Jazeker, gamen is een serieuze zaak en goed voor je hersen",
-        "Niet voor mij, ik vind deze game al spannend"
+        "Waar",
+        "Niet waar",
+        "",
+        ""
       ],
-      "answer" : 3,
-      "correct": "c: Door te gamen wordt je beter in het onderdrukken van informatie die op dat moment niet relevant is. Hierdoor kun je sneller beslissingen nemen.",
-      "wrong": "Toch wel! c: Door te gamen wordt je beter in het onderdrukken van informatie die op dat moment niet relevant is. Hierdoor kun je sneller beslissingen nemen."
+      "answer" : 1,
+      "correct": "Waar! Sommige gegevensverwerkingen leveren een hoog privacy risico op voor de betrokken personen. Onder de AVG ben je - ook als kleine organisatie - in zo’n geval verplicht om een data protection impact assessment (DPIA) uit te voeren.",
+      "wrong": "Fout! Sommige gegevensverwerkingen leveren een hoog privacy risico op voor de betrokken personen. Onder de AVG ben je - ook als kleine organisatie - in zo’n geval verplicht om een data protection impact assessment (DPIA) uit te voeren."
     }
   ],
   "q4": [
     {
-      "question": "Met hersenletsel kun je niet meer goed sporten",
+      "question": "Wat is SQL Injection?",
       "options": [
-        "Nee, je zit voor de rest van je leven op je luie gat.",
-        "Nee, met hersenletsel ben je zo moe dat het meestal niet meer lukt om te sporten.",
-        "Onzin, er zijn volop mogelijkheden om te sporten met hersenletsel.",
-        "Jawel, maar alleen met lotgenoten."
+        "Een hack waarmee je gegevens uit een database kunt halen",
+        "Injecties geven met behulp van een zorgrobot",
+        "Een programmaatje dat je wachtwoord afluistert en doorstuurt",
+        "Een hybride sportauto"
       ],
-      "answer" : 3,
-      "correct": "c: Juist, er zijn veel sporten mogeljk met hersenletsel. Breinlijn.nl kan je helpen met het vinden van de juiste sport.",
-      "wrong": "c: Onjuist, er zijn veel sporten mogeljk met hersenletsel. Breinlijn.nl kan je helpen met het vinden van de juiste sport."
+      "answer" : 1,
+      "correct": "Open Web Application Security Project OWASP toont de beveiligingsrisico’s voor webapplicaties. De top 10 helpt bij de bewustwording en helpt je op weg bij het stellen van de juiste vragen. Hacken met SQL Injection staat op nr 1.",
+      "wrong": "Fout! Open Web Application Security Project OWASP toont de beveiligingsrisico’s voor webapplicaties. De top 10 helpt bij de bewustwording en helpt je op weg bij het stellen van de juiste vragen. Hacken met SQL Injection staat op nr 1."
     }
   ],
   "q5": [
     {
-      "question": "Van hersenletsel kun je volledig herstellen als je maar hard genoeg oefent.",
+      "question": "Met een TLS certificaat kun je data versleuteld over internet versturen.",
       "options": [
-        "Ja, rust roest. Hoe meer je traint des te beter je opknapt.",
-        "Nee, de gevolgen van hersenletsel zijn voor iedereen anders.",
-        "Nee, maar door revalidatie kun je er het maximale uithalen.",
-        "Ja, binnen een paar maanden herstellen de meeste mensen."
+        "Waar",
+        "Niet waar",
+        "",
+        ""
       ],
-      "answer" : 3,
-      "correct": "c: Juist, vrijwel niemand is 100% de oude na hersenletsel, maar met de juiste ondersteuning kun je ver komen. Kijk maar eens op Breinlijn.nl",
-      "wrong": "c: Fout, vrijwel niemand is 100% de oude na hersenletsel, maar met de juiste ondersteuning kun je ver komen. Kijk maar eens op Breinlijn.nl"
+      "answer" : 1,
+      "correct": "Waar! Transport Layer Security (de opvolger van Secure Socket Layer SSL) zorgt ervoor dat data niet leesbaar over netwerken wordt verstuurd. Je herkent het aan het hangslotje in de browserbalk.",
+      "wrong": "Fout! Transport Layer Security (de opvolger van Secure Socket Layer SSL) zorgt ervoor dat data niet leesbaar over netwerken wordt verstuurd. Je herkent het aan het hangslotje in de browserbalk."
+    }
+  ],
+  "q6": [
+    {
+      "question": "Welke stelling is onjuist?",
+      "options": [
+        "Een app waarmee  je een medische diagnose stelt, moet een CE-keurmerk dragen",
+        "Voor een aansluiting op het LSP is een Goed Beheerd Zorgsysteem GBZ verplicht",
+        "Een Datalek melden is altijd verplicht",
+        "Patiënten mogen geen zorggegevens in de cloud opslaan"
+      ],
+      "answer" : 1,
+      "correct": "D, door MedMij wordt het mogelijk je eigen data op te slaan in een Persoonlijke Gezondheids Omgeving PGO. En dat mag zeker! Maar weet jij ook precies hoe het met de andere 3 stellingen zit? ",
+      "wrong": "Fout! D, door MedMij wordt het mogelijk je eigen data op te slaan in een Persoonlijke Gezondheids Omgeving PGO. En dat mag zeker! Maar weet jij ook precies hoe het met de andere 3 stellingen zit? "
     }
   ]
 }

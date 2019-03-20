@@ -1,4 +1,7 @@
-var timeout = 1000;
+var question_show_seconds = 15;
+
+
+var timeout = question_show_seconds * 100;
 var current = 0;
 var currentTime;
 var gameEndTime;
@@ -64,9 +67,6 @@ function playAudio(file, repeat, meanwhile) {
  * Start the game by clicking the highlighted ky.
  */
 function start(page) {
-    if(page == "game"){
-        playAudio('../static/audio/start-quiz.mp3', true, false);
-    }
     if(page == "quiz"){
 
     }
@@ -191,7 +191,7 @@ function runQuiz() {
 function progress_step() {
     var elem = document.getElementById("bar");
     var width = 1;
-    timer = setInterval(step, 240);
+    timer = setInterval(step, question_show_seconds * 10);
 
     /**
      * step for each percentage, if 100% is reached clear the timer
@@ -229,8 +229,15 @@ function question() {
 
     current = questions['q' + question_nr][0].answer;
 
+    $('#question_nr').html('vraag ' + question_nr);
+
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
+            if(questions['q' + question_nr][0].options[j] == '') {
+                $('#question_options li:eq(' + j + ')').hide();
+            }else{
+                $('#question_options li:eq(' + j + ')').show();
+            }
             $('#question_options li:eq(' + j + ') span').text(questions['q' + question_nr][0].options[j]);
         }
     }
@@ -242,7 +249,7 @@ function question() {
  * Display the answer=wrong container
  */
 function answer_wrong() {
-    playAudio('../static/audio/wrong-answer.mp3', false, true);
+    playAudio('../static/audio/fout-invader.wav', false, true);
 
     wrong++;
     question_nr++;
@@ -256,7 +263,7 @@ function answer_wrong() {
  * Display the answer=correct container
  */
 function answer_correct() {
-    playAudio('../static/audio/correct-answer.mp3', false, true);
+    playAudio('../static/audio/goed-invader.wav', false, true);
 
     correct++;
     question_nr++;
