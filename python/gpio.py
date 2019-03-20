@@ -9,16 +9,8 @@ class GPIOhelper:
     message = pin + ":on"
     
     pin = int(pin)
-    if pin == 1:
-      pin = 25
-    if pin == 2:
-      pin = 24
-    if pin == 3:
-      pin = 7
-    if pin == 4:
-      pin = 8
 
-    if pin in [25,24,7,8]:
+    if pin in [25,24,4,17,27,22]:
       GPIO.setwarnings(False)
       GPIO.setmode(GPIO.BCM)
       GPIO.setup(int(pin), GPIO.OUT, initial=GPIO.HIGH)
@@ -76,16 +68,7 @@ class GPIOhelper:
     pin = int(pin)
     message = ""
 
-    if pin == 1:
-      pin = 25
-    if pin == 2:
-      pin = 24
-    if pin == 3:
-      pin = 7
-    if pin == 4:
-      pin = 8
-
-    if pin in [25,24,7,8]:
+    if pin in [25,24,4,17,27,22]:
       GPIO.setwarnings(False)
       GPIO.setmode(GPIO.BCM)
       GPIO.setup(int(pin), GPIO.OUT, initial=GPIO.HIGH)
@@ -99,16 +82,7 @@ class GPIOhelper:
     pin = int(pin)
     message = ""
 
-    if pin == 1:
-      pin = 25
-    if pin == 2:
-      pin = 24
-    if pin == 3:
-      pin = 7
-    if pin == 4:
-      pin = 8
-
-    if pin in [25,24,7,8]:
+    if pin in [25,24,4,17,27,22]:
       GPIO.setwarnings(False)
       GPIO.setmode(GPIO.BCM)
       GPIO.setup(int(pin), GPIO.OUT, initial=GPIO.LOW)
@@ -120,7 +94,7 @@ class GPIOhelper:
 
   def reset(self):
     message = ""
-    pins = ["25","24","7","8"]
+    pins = ["25","24","4","17","27","22"]
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BCM)
 

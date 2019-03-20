@@ -9,8 +9,8 @@
         ""
       ],
       "answer" : 1,
-      "correct": "Waar! Sterker nog, in de NEN7513 is het zelfs verplicht gesteld dat er een log bestand wordt bijgehouden. Daarmee is altijd te traceren wie het dossier inzag. Weet je ook zeker of dit ook voor jouw EPD geldt?",
-      "wrong": "Fout! In de NEN7513 is het zelfs verplicht gesteld dat er een log bestand wordt bijgehouden. Daarmee is altijd te traceren wie het dossier inzag. Weet je ook zeker of dit ook voor jouw EPD geldt?"
+      "correct": "A: Waar! Sterker nog, in de NEN7513 is het zelfs verplicht gesteld dat er een log bestand wordt bijgehouden. Daarmee is altijd te traceren wie het dossier inzag. Weet je ook zeker of dit ook voor jouw EPD geldt?",
+      "wrong": "A: In de NEN7513 is het zelfs verplicht gesteld dat er een log bestand wordt bijgehouden. Daarmee is altijd te traceren wie het dossier inzag. Weet je ook zeker of dit ook voor jouw EPD geldt?"
     }
   ],
   "q2": [
@@ -23,8 +23,8 @@
         "Nee, patiënt-informatie mag je nooit delen"
       ],
       "answer" : 3,
-      "correct": "Ja, in principe mag je een account delen, maar dan moet je precies bijhouden wie wanneer inlogt! Ook mag je niet zomaar alle dossiers bekijken. Een persoonlijke inlog op naam is handiger en veiliger!",
-      "wrong": "Fout! In principe mag je een account delen, maar dan moet je precies bijhouden wie wanneer inlogt! Ook mag je niet zomaar alle dossiers bekijken. Een persoonlijke inlog op naam is handiger en veiliger! "
+      "correct": "C: Ja, in principe mag je een account delen, maar dan moet je precies bijhouden wie wanneer inlogt! Ook mag je niet zomaar alle dossiers bekijken. Een persoonlijke inlog op naam is handiger en veiliger!",
+      "wrong": "C: In principe mag je een account delen, maar dan moet je precies bijhouden wie wanneer inlogt! Ook mag je niet zomaar alle dossiers bekijken. Een persoonlijke inlog op naam is handiger en veiliger! "
     }
   ],
   "q3": [
@@ -37,8 +37,8 @@
         ""
       ],
       "answer" : 1,
-      "correct": "Waar! Sommige gegevensverwerkingen leveren een hoog privacy risico op voor de betrokken personen. Onder de AVG ben je - ook als kleine organisatie - in zo’n geval verplicht om een data protection impact assessment (DPIA) uit te voeren.",
-      "wrong": "Fout! Sommige gegevensverwerkingen leveren een hoog privacy risico op voor de betrokken personen. Onder de AVG ben je - ook als kleine organisatie - in zo’n geval verplicht om een data protection impact assessment (DPIA) uit te voeren."
+      "correct": "A: Waar! Sommige gegevensverwerkingen leveren een hoog privacy risico op voor de betrokken personen. Onder de AVG ben je - ook als kleine organisatie - in zo’n geval verplicht om een data protection impact assessment (DPIA) uit te voeren.",
+      "wrong": "A: Sommige gegevensverwerkingen leveren een hoog privacy risico op voor de betrokken personen. Onder de AVG ben je - ook als kleine organisatie - in zo’n geval verplicht om een data protection impact assessment (DPIA) uit te voeren."
     }
   ],
   "q4": [
@@ -51,8 +51,8 @@
         "Een hybride sportauto"
       ],
       "answer" : 1,
-      "correct": "Open Web Application Security Project OWASP toont de beveiligingsrisico’s voor webapplicaties. De top 10 helpt bij de bewustwording en helpt je op weg bij het stellen van de juiste vragen. Hacken met SQL Injection staat op nr 1.",
-      "wrong": "Fout! Open Web Application Security Project OWASP toont de beveiligingsrisico’s voor webapplicaties. De top 10 helpt bij de bewustwording en helpt je op weg bij het stellen van de juiste vragen. Hacken met SQL Injection staat op nr 1."
+      "correct": "A: Open Web Application Security Project OWASP toont de beveiligingsrisico’s voor webapplicaties. De top 10 helpt bij de bewustwording en helpt je op weg bij het stellen van de juiste vragen. Hacken met SQL Injection staat op nr 1.",
+      "wrong": "A: Open Web Application Security Project OWASP toont de beveiligingsrisico’s voor webapplicaties. De top 10 helpt bij de bewustwording en helpt je op weg bij het stellen van de juiste vragen. Hacken met SQL Injection staat op nr 1."
     }
   ],
   "q5": [
@@ -65,8 +65,8 @@
         ""
       ],
       "answer" : 1,
-      "correct": "Waar! Transport Layer Security (de opvolger van Secure Socket Layer SSL) zorgt ervoor dat data niet leesbaar over netwerken wordt verstuurd. Je herkent het aan het hangslotje in de browserbalk.",
-      "wrong": "Fout! Transport Layer Security (de opvolger van Secure Socket Layer SSL) zorgt ervoor dat data niet leesbaar over netwerken wordt verstuurd. Je herkent het aan het hangslotje in de browserbalk."
+      "correct": "Waar! A: Transport Layer Security (de opvolger van Secure Socket Layer SSL) zorgt ervoor dat data niet leesbaar over netwerken wordt verstuurd. Je herkent het aan het hangslotje in de browserbalk.",
+      "wrong": "A: Transport Layer Security (de opvolger van Secure Socket Layer SSL) zorgt ervoor dat data niet leesbaar over netwerken wordt verstuurd. Je herkent het aan het hangslotje in de browserbalk."
     }
   ],
   "q6": [
@@ -78,9 +78,9 @@
         "Een Datalek melden is altijd verplicht",
         "Patiënten mogen geen zorggegevens in de cloud opslaan"
       ],
-      "answer" : 1,
-      "correct": "D, door MedMij wordt het mogelijk je eigen data op te slaan in een Persoonlijke Gezondheids Omgeving PGO. En dat mag zeker! Maar weet jij ook precies hoe het met de andere 3 stellingen zit? ",
-      "wrong": "Fout! D, door MedMij wordt het mogelijk je eigen data op te slaan in een Persoonlijke Gezondheids Omgeving PGO. En dat mag zeker! Maar weet jij ook precies hoe het met de andere 3 stellingen zit? "
+      "answer" : 4,
+      "correct": "D: door MedMij wordt het mogelijk je eigen data op te slaan in een Persoonlijke Gezondheids Omgeving PGO. En dat mag zeker! Maar weet jij ook precies hoe het met de andere 3 stellingen zit? ",
+      "wrong": "D: door MedMij wordt het mogelijk je eigen data op te slaan in een Persoonlijke Gezondheids Omgeving PGO. En dat mag zeker! Maar weet jij ook precies hoe het met de andere 3 stellingen zit? "
     }
   ]
 }

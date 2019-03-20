@@ -57,11 +57,6 @@
     color: #F4E604;
 }
 
-.back_green {
-    background-color: #DDDB00;
-    color: #603813;
-}
-
 .table {
     display: table;
     width: 100%;
@@ -94,19 +89,32 @@
 }
 
 #question {
-    text-transform: uppercase;
     padding: 0 40px 20px;
+    font-size: 30px;
     font-family: 'Teko-Regular', sans-serif;
 }
 
+#continue {
+    color: #29265B;
+    text-align:center;
+}
+#continue h3{
+    font-size: 3vh;
+}
+
 #wrong {
-    background-color: #f91628;
-    color: #ffffff;
+    color: red;
 }
 
 #correct {
-    background-color: #8ec251;
-    color: #603813;
+    color: #29265B;
+}
+
+.wrong,
+.correct {
+    padding-top: 5px;
+    font-size: 20px;
+    font-family: 'Teko-Regular';
 }
 
 #question_options {
@@ -147,15 +155,17 @@
     font-size: 30px;
 }
 
-#quiz_result .cell{
-	vertical-align: top;
+#quiz_result .cell {
+    vertical-align: top;
 }
-#quiz_result div.cell .container{
-	padding:10px 20px 5px 20px;
-	margin-left:10px;
+
+#quiz_result div.cell .container {
+    padding: 10px 20px 5px 20px;
+    margin-left: 10px;
 }
+
 .textblock {
-	padding: 0 20px 20px 20px;
+    padding: 0 20px 20px 20px;
 }
 
 video {
@@ -197,8 +207,8 @@ ul {
     margin-top: 15px;
 }
 
-.btnoff, .btnon{
-    width:80px;
+.btnoff, .btnon {
+    width: 80px;
 }
 
 /*main layout*/
@@ -212,9 +222,9 @@ body {
     max-width: 1024px;
 
     /* The 95% and 2vh can vary, depending on the topscreen offset  */
-    background-position-y: 40px!important;
-    background-size: auto 90%!important;
-    margin-top: 10vh!important;;
+    background-position-y: 40px !important;
+    background-size: auto 90% !important;
+    margin-top: 10vh !important;;
 }
 
 #quiz_start {
@@ -223,7 +233,7 @@ body {
 
 #quiz_run {
     background: #29265B url(../img/invaders-logo-klein.png) no-repeat fixed 78% 0;
-    background-size: auto 25%!important;
+    background-size: auto 25% !important;
 }
 
 #quiz_result {
