@@ -8,8 +8,8 @@ def main():
     led.reset()
     return render_template('index.html')
 
-@app.route("/quiz",methods=['GET'])
-def quiz():
+@app.route("/quiz")
+def main():
     led = gpio.GPIOhelper()
     led.reset()
     return render_template('quiz_start.html')
