@@ -73,6 +73,20 @@
 .container {
     background: #ddd92e url('../img/scherm-3-tekstblok.png') top right no-repeat;
     padding: 20px 20px 10px 20px;
+    color: #29265B;
+}
+
+.center {
+    text-align: center;
+}
+
+.container.center{
+    margin-bottom: 10px;
+}
+
+.score__text {
+    font-size: 30px;
+    font-family: 'Teko-Regular', sans-serif;
 }
 
 #progress {
@@ -237,5 +251,5 @@ body {
 }
 
 #quiz_result {
-    background: #603813 url('../img/quiz_score-achtergrond.png') no-repeat fixed center;
+    background: #29265B url('../img/uitslag-scherm-achtergrond.jpg') no-repeat fixed center;
 }

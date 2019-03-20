@@ -9,49 +9,52 @@
 </head>
 <body id="quiz_result" class="back__blue">
 
-<section class="table">
-    <h1 class="cell container back_green score">{{ score }}%</h1>
-    <div class="cell">
-    <div class="container back_green">
+<span id="question_nr">Uitslag</span>
+<div class="container center">
+<h1 class="score">{{ score }}% GOED</h1>
+</div>
+    <div class="container score__text">
         <h2>
             {% if score > 90 %}
-            perfect gedaan!
-            {% elif score > 70 %}
-            goed gedaan!
-            {% elif score > 50 %}
-            goed geprobeerd!
+            Je bent toch geen hacker he? Een top score! Play IT Safe!
+            {% elif score > 82 %}
+            Slechts 1 misser…De Security Invaders kunnen wel inpakken. Play IT Safe!
+            {% elif score > 49 %}
+            Vul hier je credit card gegevens in…. Nee daar trap jij niet in. Je bent goed op de hoogte!
+            {% elif score > 16 %}
+            Je bent weer opgefrist met nieuwe kennis. Nooit te oud om te leren. Play IT Safe!
             {% else %}
             Jammer geen punten.
             {% endif %}
         </h2>
     </div>
-    </div>
-</section>
 
-<div class="left textblock">
-    Hopelijk heb je wat geleerd over hersenletsel. De gevolgen
-    van hersenletsel zijn vaak niet zichtbaar. En problemen kunnen
-    pas jaren later zichtbaar worden. Neem gerust contact op met 
-    Breinlijn.nl of vraag jouw huisarts om advies over de gevolgen van
-    hersenletsel.
-</div>
-
-<section class="back_green container">
+<section class="back__blue center">
     <div>
-        <h3>druk op een knop op terug te gaan</h3>
+        <br>
+        <h4>druk op start om (opnieuw) te beginnen.</h4>
     </div>
 </section>
 
 
 <script>
     function keyHandler(keyCode) {
-        //location.href = '/';
+        location.href = '/';
     }
 
     $(function () {
-        ready = true;
+        inactiveTimer = setTimeout(function(){ self.location.href = '/'; }, 60000);
 
-        playAudio('../static/audio/end-game.mp3', false, false);
+        ready = true;
+        switchOn(24);
+        switchOn(25);
+
+        switchOff(4);
+        switchOff(17);
+        switchOff(27);
+        switchOff(22);
+
+        playAudio('../static/audio/game-over-invader.wav', false, false);
     });
 </script>
 
