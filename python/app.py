@@ -20,7 +20,7 @@ def quizRun():
     led.reset()
     return render_template('quiz_run.html')
 
-@app.route('/quiz_result/<result>',methods=['POST'])
+@app.route('/quiz_result/<result>')
 def quizResult(result):
     led = gpio.GPIOhelper()
     led.reset()
