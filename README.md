@@ -8,8 +8,9 @@
 6. Put in the raspberry pi connect keyboard monitor, mouse and power
 7. On the installation menu choose Raspbian (debian)
 8. Launch the terminal on the raspberry and:
-    1. sudo apt-get install apache2
-    2. sudo pip install flask
+    (not required anymore sudo apt-get install apache2)
+    1. sudo pip install flask
+    2. sudo pip install evdev
     3. sudo apt-get install git-core
 
     5. cd /home/Pi
@@ -25,7 +26,7 @@
     
 9. Start the pythonscript at boot
 	1. sudo chmod 755 /var/www/app/boot.sh
-	2. sudo mkdir var/log/cron
+	2. sudo mkdir /var/log/cron
 	3. sudo chmod 777 var/log/cron/
 	4. sudo crontab -e 
 		Add:  @reboot sh /var/www/app/boot.sh > /var/log/cron/cronlog 2>&1
@@ -36,8 +37,9 @@
 	    ```
 		
 10. Start the browser at boot
-	1. Open the teminal and type: 	sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
-    2. 
+	1. Open the teminal and create the folder:  /home/pi/.config/lxsession/LXDE-pi/
+	2. Open the teminal and type: 	sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
+    3. 
     ```
     #@xscreensaver -no-splash # comment this line out to disable screensaver
     @xset s off
@@ -45,8 +47,8 @@
     @xset s noblank
     @chromium-browser --incognito --kiosk http://localhost:5000
 	```
-	3. save and reboot
-	4. Note:   crtl W   will close the browser!
+	4. save and reboot
+	5. Note:   crtl W   will close the browser!
 
 
 # Run (in the background)
