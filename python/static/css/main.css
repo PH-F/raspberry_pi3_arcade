@@ -54,7 +54,7 @@
 
 .back__blue {
     background-color: #29265B;
-    color: #DDDB00;
+    color: #F4E604;
 }
 
 .back_green {
@@ -198,13 +198,13 @@ body {
     max-width: 1024px;
 
     /* The 95% and 2vh can vary, depending on the topscreen offset  */
-    background-position-y: 120px!important;
+    background-position-y: 40px!important;
     background-size: auto 90%!important;
     margin-top: 10vh!important;;
 }
 
 #quiz_start {
-    background: #603813 url('../img/quiz-spelregels-achtergrond.png') no-repeat fixed center;
+    background: #29265B url('../img/spelregels.jpg') no-repeat fixed center;
 }
 
 #quiz_run {
