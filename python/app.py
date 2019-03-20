@@ -4,6 +4,7 @@ import gpio
 app = Flask(__name__)
 @app.route("/")
 def main():
+    led = gpio.GPIOhelper()
     led.reset()
     return render_template('index.html')
 
