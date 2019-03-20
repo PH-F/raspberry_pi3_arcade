@@ -1,11 +1,31 @@
 @font-face {
-    font-family: 'Baloo Da';
-    src: url('../fonts/Baloo_Da/BalooDa-Regular.ttf') format('truetype');
+    font-family: 'PressStart2P';
+    src: url('../fonts/PressStart2P-Regular.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Bungee';
-    src: url('../fonts/Bungee/Bungee-Regular.ttf') format('truetype');
+    font-family: 'Teko-Regular';
+    src: url('../fonts/Teko-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Teko-Bold';
+    src: url('../fonts/Teko-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Teko-Light';
+    src: url('../fonts/Teko-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Teko-Medium';
+    src: url('../fonts/Teko-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Teko-SemiBold.ttf';
+    src: url('../fonts/Teko-SemiBold.ttf') format('truetype');
 }
 
 .hidden {
@@ -76,7 +96,7 @@
 #question {
     text-transform: uppercase;
     padding: 0 40px 20px;
-    font-family: 'Bungee', sans-serif;
+    font-family: 'Teko-Regular', sans-serif;
 }
 
 #wrong {
@@ -171,7 +191,7 @@ ul {
 body {
     padding-top: 32vh;
     font-size: 3vh;
-    font-family: 'Baloo Da', sans-serif;
+    font-family: 'Teko-Regular', sans-serif;
     margin: auto;
 
     /* max screen width for center block */
