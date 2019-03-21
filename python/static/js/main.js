@@ -218,10 +218,6 @@ function progress_step() {
 function question() {
 
     clearTimeout(inactiveTimer);
-    switchOff(4);
-    switchOff(17);
-    switchOff(27);
-    switchOff(22);
 
     $('#bar').css('width','1%');
     $('#question_container').removeClass('hidden');
