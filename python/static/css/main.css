@@ -85,7 +85,7 @@
 }
 
 .score__text {
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'Teko-Regular', sans-serif;
 }
 
@@ -104,7 +104,7 @@
 
 #question {
     padding: 0 40px 20px;
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'Teko-Regular', sans-serif;
 }
 
@@ -113,7 +113,7 @@
     text-align:center;
 }
 #continue h3{
-    font-size: 3vh;
+    font-size: 4vh;
 }
 
 #wrong {
@@ -127,7 +127,7 @@
 .wrong,
 .correct {
     padding-top: 5px;
-    font-size: 20px;
+    font-size: 35px;
     font-family: 'Teko-Regular';
 }
 
@@ -158,7 +158,7 @@
 
 #question_options li span {
     color: #29235C;
-    font-size: 24px;
+    font-size: 40px;
     font-family: 'Teko-Regular';
 
 }
@@ -166,7 +166,7 @@
 #question_nr {
     position: absolute;
     top: 42px;
-    font-size: 30px;
+    font-size: 50px;
 }
 
 #quiz_result .cell {
@@ -214,7 +214,7 @@ h3 {
 h4 {
     line-height: 1;
     margin: 0;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 ul {
@@ -228,7 +228,7 @@ ul {
 /*main layout*/
 body {
     padding-top: 32vh;
-    font-size: 3vh;
+    font-size: 4vh;
     font-family: 'PressStart2P', sans-serif;
     margin: auto;
 

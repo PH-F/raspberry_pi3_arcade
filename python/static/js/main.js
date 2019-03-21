@@ -119,7 +119,7 @@ function calculateTotal() {
 
 function switchOn(pin) {
 
-    $.post("/blink/" + pin, function (data) {
+    $.post("/switchOn/" + pin, function (data) {
         ready = true;
         console.log(data);
     });
