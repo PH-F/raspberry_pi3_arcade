@@ -75,7 +75,6 @@ class GPIOhelper:
     else:
       message = "pin not found"
 
-    GPIO.cleanup()
     return message
 
   def switchOff(self,pin):
@@ -89,7 +88,6 @@ class GPIOhelper:
     else:
       message = "pin not found"
 
-    GPIO.cleanup()
     return message
 
   def reset(self):
