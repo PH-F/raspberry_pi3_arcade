@@ -68,7 +68,7 @@ class GPIOhelper:
     pin = int(pin)
     message = ""
 
-    if pin in ["25","24","4","17","27","22"]:
+    if pin in [25,24,4,17,27,22]:
       GPIO.setwarnings(False)
       GPIO.setmode(GPIO.BCM)
       GPIO.setup(int(pin), GPIO.OUT, initial=GPIO.HIGH)
@@ -82,7 +82,7 @@ class GPIOhelper:
     pin = int(pin)
     message = ""
 
-    if pin in ["25","24","4","17","27","22"]:
+    if pin in [25,24,4,17,27,22]:
       GPIO.setwarnings(False)
       GPIO.setmode(GPIO.BCM)
       GPIO.setup(int(pin), GPIO.OUT, initial=GPIO.LOW)
