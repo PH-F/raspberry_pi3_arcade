@@ -292,10 +292,6 @@ function questionKeyHandler (keyCode) {
         question_mode = false;
         inactiveTimer = setTimeout(function(){ self.location.href = '/'; }, 60000);
 
-        switchOff(4);
-        switchOff(17);
-        switchOff(27);
-        switchOff(22);
 
         if (current == translatekey(keyCode)) {
             answer_correct()
@@ -308,12 +304,6 @@ function questionKeyHandler (keyCode) {
         if (question_nr > 6) {
             location.href = 'quiz_result/' + calculateScore();
         } else {
-
-            switchOn(4);
-            switchOn(17);
-            switchOn(27);
-            switchOn(22);
-
             question_mode = true;
             question();
         }
