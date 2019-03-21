@@ -113,11 +113,15 @@
     text-align:center;
 }
 #continue h3{
-    font-size: 4vh;
+    font-size: 3vh;
+}
+
+#wrong h3 {
+    color: red;
 }
 
 #wrong {
-    color: red;
+    color: #29265B;
 }
 
 #correct {
@@ -228,7 +232,7 @@ ul {
 /*main layout*/
 body {
     padding-top: 32vh;
-    font-size: 4vh;
+    font-size: 3vh;
     font-family: 'PressStart2P', sans-serif;
     margin: auto;
 
