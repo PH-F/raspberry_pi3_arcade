@@ -54,9 +54,10 @@ sudo python python/emulateKeyBoard.py
 
 # Build with Python & Javascript
 
-## GamePlay
+## Wiring
 ![Image](https://github.com/PH-F/raspberry_pi3_arcade/blob/xray/tests/pinout.png)
 
+## GamePlay
 - key <s> = start game (on start screen)
 - key <space> = verify answer (on run screen)
 - key <r> = give one answer (on run screen)
