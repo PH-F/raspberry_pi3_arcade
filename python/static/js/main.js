@@ -1,311 +1,16 @@
-var question_show_seconds = 15;
+// Configuarable
+var coordinates = ["102,51", "462,54", "99,382", "464,384"];
+var margin = 20;
+var pointSize = 20;
+var inActiveSeconds = 120;
 
 
-var timeout = question_show_seconds * 100;
-var current = 0;
-var currentTime;
-var gameEndTime;
-var correct = 0;
-var wrong = 0;
-var missed = 0;
-var ready = false;
-var questions;
+// Private
 var timer;
+var timestamp = 0;
 var inactiveTimer;
-var question_mode = true;
-var question_nr = 1;
-var answers;
-var currentAnswer = 0;
-var page = "";
-var audioElement = document.createElement('audio');
-var audioElement2 = document.createElement('audio');
-
-/**
- * Wait for x seconds before calling the callback method.
- * @param time
- * @returns {Promise<any>}
- */
-function sleep(time) {
-    return new Promise((resolve) => setTimeout(resolve, time));
-}
-
-/**
- * Give a random number between 1 and 4
- * @returns {number}
- */
-function rand() {
-    let min = 1;
-    let max = 4;
-    let val = Math.floor(Math.random() * (max - min + 1) + min);
-    return val == current ? rand() : val;
-}
-
-/**
- * Get Current timestamp increment with X seconds
- * @param seconds
- * @returns {*}
- */
-function getTimestamp(seconds) {
-    return Math.floor(Date.now() / 1000) + (seconds);
-}
-
-function playAudio(file, repeat, meanwhile) {
-    if(meanwhile) {
-        audioElement2.setAttribute('src', file);
-        audioElement2.play();
-    }else {
-        audioElement.setAttribute('src', file);
-        audioElement.play();
-        if (repeat) {
-            audioElement.addEventListener('ended', function () {
-                this.play();
-            }, false);
-        }
-    }
-}
-
-/**
- * Start the game by clicking the highlighted ky.
- */
-function start(page) {
-    if(page == "quiz"){
-
-    }
-}
-
-/**
- * Animate the 4 button 1, 2, 3, 4, 3 ,2 ,1, loop
- */
-function animation1() {
-
-    animationTime = 3500;
-
-    $.post("/animation1");
-    sleep(animationTime).then(() => {
-        animation2();
-    });
-}
-
-/**
- * Animate the 4 button 1234, ----, 1234 ----
- */
-function animation2() {
-
-    animationTime = 2000;
-
-    $.post("/animation1");
-    sleep(animationTime).then(() => {
-        animation1();
-    });
-}
-
-/**
- * Calculate the quizScore
- * @returns {number}
- */
-function calculateScore() {
-    let total = correct + wrong + missed;
-    return Math.floor(correct * (100 / total));
-}
-
-/**
- * Calculate the gameTotal
- * @returns {number}
- */
-function calculateTotal() {
-    let total = correct; // - wrong - missed;
-    return total;
-}
-
-function switchOn(pin) {
-
-    $.post("/switchOn/" + pin, function (data) {
-        ready = true;
-        console.log(data);
-    });
-}
-
-function switchOff(pin) {
-    $.post("/switchOff/" + pin, function (data) {
-        ready = true;
-        console.log(data);
-    });
-
-}
-
-/**
- * recursive function that runs until time's up.
- * It blinks the lights random.
- */
-function gameBlink() {
-
-    answers[currentAnswer] = 0;
-	$('#sec_left').text( gameEndTime - getTimestamp(0) );
-    
-    // console.clear();
-    sleep(timeout).then(() => {
-        current = rand();
-
-        //color screen buttons
-        $('.btnoff').show();
-        $('.btnon').hide();
-        $('#r' + current + ' .btnoff').hide();
-        $('#r' + current + ' .btnon').show();
-
-        $.post("/blink/" + current, function (data) {
-            if (ready) {
-                $('#missed').text(++missed);
-            }
-            ready = true;
-            console.log(current);
-        });
-        if (getTimestamp(0) < gameEndTime) {
-            currentAnswer++;
-            gameBlink();
-        } else {
-
-            correct = 0;
-            answers.forEach(function(val){
-                correct = correct + val;
-            });
-
-            location.href = 'game_result/' + calculateTotal();
-        }
-    });
-}
-
-/**
- * Load the questions Json and display the 1st question.
- */
-function runQuiz() {
-
-    $.getJSON("../static/json/questions.json", function (json) {
-        questions = json;
-        question();
-    });
-
-}
-
-/**
- * Initialize the progressbar and run this with for 24 sec 24000 ms (240 * 100)
- */
-function progress_step() {
-    var elem = document.getElementById("bar");
-    var width = 1;
-    timer = setInterval(step, question_show_seconds * 10);
-
-    /**
-     * step for each percentage, if 100% is reached clear the timer
-     * and go to the answer=wrong view.
-     */
-    function step() {
-        if (width >= 100) {
-            clearInterval(timer);
-            //timeout, answer => wrong!
-            answer_wrong();
-            question_mode = false;
-
-        } else {
-            width++;
-            elem.style.width = width + '%';
-        }
-    }
-}
-
-/**
- * Display the question with answer options and call the progressbar
- */
-function question() {
-
-    clearTimeout(inactiveTimer);
-
-    $('#bar').css('width','1%');
-    $('#question_container').removeClass('hidden');
-    $('#progress').removeClass('hidden');
-    $('#correct').addClass('hidden');
-    $('#wrong').addClass('hidden');
-    $('#continue').addClass('hidden');
-
-    $('#question').html(questions['q' + question_nr][0].question);
-    $('.correct').html(questions['q' + question_nr][0].correct);
-    $('.wrong').html(questions['q' + question_nr][0].wrong);
-
-    current = questions['q' + question_nr][0].answer;
-
-    $('#question_nr').html('vraag ' + question_nr);
-
-    for (let i = 0; i < 4; i++) {
-        for (let j = 0; j < 4; j++) {
-            if(questions['q' + question_nr][0].options[j] == '') {
-                $('#question_options li:eq(' + j + ')').hide();
-            }else{
-                $('#question_options li:eq(' + j + ')').show();
-            }
-            $('#question_options li:eq(' + j + ') span').text(questions['q' + question_nr][0].options[j]);
-        }
-    }
-
-    progress_step();
-}
-
-/**
- * Display the answer=wrong container
- */
-function answer_wrong() {
-    playAudio('../static/audio/fout-invader.wav', false, true);
-
-    wrong++;
-    question_nr++;
-    $('#question_container').addClass('hidden');
-    $('#progress').addClass('hidden');
-    $('#wrong').removeClass('hidden');
-    $('#continue').removeClass('hidden');
-}
-
-/**
- * Display the answer=correct container
- */
-function answer_correct() {
-    playAudio('../static/audio/goed-invader.wav', false, true);
-
-    correct++;
-    question_nr++;
-    $('#question_container').addClass('hidden');
-    $('#progress').addClass('hidden');
-    $('#correct').removeClass('hidden');
-    $('#continue').removeClass('hidden');
-}
-
-/**
- * Implement what happens whn you press a key on the quiz page when the quis is active.
- * @param keyCode
- */
-function questionKeyHandler (keyCode) {
-    if (question_mode) {
-
-        //stop progressbar
-        clearInterval(timer);
-        question_mode = false;
-        inactiveTimer = setTimeout(function(){ self.location.href = '/'; }, 60000);
-
-
-        if (current == translatekey(keyCode)) {
-            answer_correct()
-        } else {
-            answer_wrong()
-        }
-
-    } else {
-
-        if (question_nr > 6) {
-            location.href = 'quiz_result/' + calculateScore();
-        } else {
-            question_mode = true;
-            question();
-        }
-
-    }
-}
+var correct = [];
+var inactiveTime = (inActiveSeconds * 1000);
 
 /**
  * Translate a key-char to an application number
@@ -314,40 +19,90 @@ function questionKeyHandler (keyCode) {
  */
 function translatekey(key) {
     switch (key) {
-        case 113:
+        case 115: /*s*/
             return 1;
             break;
-        case 119:
-            return 2;
-            break;
-        case 101:
-            return 3;
-            break;
-        case 114:
+        case 114: /*r*/
             return 4;
             break;
     }
 }
 
+function drawCoordinates(x, y, enableMonitor) {
+    var ctx = document.getElementById("canvas").getContext("2d");
+    ctx.fillStyle = "#ff2626"; // Red color
 
-/**
- * Main navigation.
- */
-$(function () {
-
-    if(page=="") {
-        //After 90 sec always return to index!
-        sleep(120000).then(() => {
-            location.href = '/'
-        });
+    if (enableMonitor) {
+        monitor(x, y);
     }
 
-    $(document).keypress(function (e) {
-        console.log(e.which);
-        if (e.which == 50) { //3
-            location.href = '/quiz'
-        } else if (ready) {
-            keyHandler(e.which)
+    ctx.beginPath();
+    ctx.arc(x, y, pointSize, 0, Math.PI * 2, true);
+    ctx.fill();
+}
+
+function monitor(x, y) {
+
+    coordinates.forEach(function (coordinate, index) {
+        var xy = coordinate.split(",");
+        if (parseInt(xy[0]).between(x - margin, x + margin) && parseInt(xy[1]).between(y - margin, y + margin)) {
+            if (!correct.includes(index)) {
+                correct.push(index);
+            }
         }
     });
-});
+
+}
+
+function clear() {
+    var canvasTemp = document.getElementById("canvas").getContext("2d");
+    canvasTemp.clearRect(0, 0, 690, 651);
+}
+
+function verify() {
+    clearInterval(inactiveTimer);
+    clear();
+    correct.forEach(function (item) {
+        xy = coordinates[item].split(",");
+        drawCoordinates(parseInt(xy[0]), parseInt(xy[1]), false);
+    });
+
+    if (coordinates.length == correct.length) {
+        // playAudio('../static/audio/Ok.wav', false, false);
+        setTimeout(function () {
+            location.href = 'result/'
+        }, 1000);
+    } else {
+        // playAudio('../static/audio/Fout.wav', false, false);
+        inactiveTimer = setTimeout(function () {
+            self.location.href = '/';
+        }, inactiveTime);
+    }
+
+}
+
+function answer() {
+
+    // forEach does not have a break. Use Array#some.
+    // This works because some returns true as soon as any of the callbacks, executed in array order, return true,
+    // short-circuiting the execution of the rest. Some, its inverse every (which will stop on a return false), and
+    // forEach are all ECMAScript Fifth Edition methods which will need to be added to the Array.prototype on browsers
+    // where they're missing. ``` [1, 2, 3].some(function(el) {console.log(el);return el === 2;}); ```
+
+    var newTimestamp = getCurrentTimeStamp();
+    console.log((timestamp - newTimestamp));
+    if (timestamp > 0 && (newTimestamp - timestamp) < 500) {
+        self.location.href = '/';
+        return;
+    } else {
+        coordinates.some(function (item, index) {
+            if (!correct.includes(index)) {
+                correct.push(index);
+                return true;
+            }
+        });
+
+        timestamp = newTimestamp;
+    }
+
+}

@@ -57,10 +57,7 @@ sudo python python/emulateKeyBoard.py
 # Build with Python & Javascript
 
 ## GamePlay
-- key 1 = game
-- key 2 = movie
-- key 3 = quiz
-- key q = option 1
-- key w = option 2
-- key e = option 3
-- key r = option 4
+- key <s> = start game (on start screen)
+- key <space> = verify answer (on run screen)
+- key <r> = give one answer (on run screen)
+- key <r><r> = back to start  (on run screen)

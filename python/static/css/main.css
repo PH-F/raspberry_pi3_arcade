@@ -53,7 +53,7 @@
 }
 
 .back__blue {
-    background-color: #29265B;
+    background-color: #00000;
     color: #F4E604;
 }
 
@@ -71,9 +71,6 @@
 }
 
 .container {
-    background: #ddd92e url('../img/scherm-3-tekstblok.png') top right no-repeat;
-    padding: 20px 20px 10px 20px;
-    color: #29265B;
 }
 
 .center {
@@ -81,12 +78,6 @@
 }
 
 .container.center{
-    margin-bottom: 10px;
-}
-
-.score__text {
-    font-size: 40px;
-    font-family: 'Teko-Regular', sans-serif;
 }
 
 #progress {
@@ -101,137 +92,9 @@
     width: 1%;
     height: 30px;
 }
-
-#question {
-    padding: 0 40px 20px;
-    font-size: 40px;
-    font-family: 'Teko-Regular', sans-serif;
-}
-
-#continue {
-    color: #29265B;
-    text-align:center;
-}
-#continue h3{
-    font-size: 2.5vh;
-}
-
-#wrong > h3 {
-    color: red;
-}
-
-#wrong {
-    color: #29265B;
-}
-
-#correct {
-    color: #29265B;
-}
-
-.wrong,
-.correct {
-    padding-top: 5px;
-    font-size: 35px;
-    font-family: 'Teko-Regular';
-}
-
-#question_options {
-    padding-left: 77px;
-    list-style-type: lower-alpha;
-}
-
-#question_options li:nth-child(0) {
-    color: #29235C;
-}
-
-#question_options li:nth-child(1) {
-    color: #29235C;
-}
-
-#question_options li:nth-child(2) {
-    color: #29235C;
-}
-
-#question_options li:nth-child(3) {
-    color: #29235C;
-}
-
-#question_options li:nth-child(4) {
-    color: #29235C;
-}
-
-#question_options li span {
-    color: #29235C;
-    font-size: 40px;
-    font-family: 'Teko-Regular';
-
-}
-
-#question_nr {
-    position: absolute;
-    top: 42px;
-    font-size: 50px;
-}
-
-#quiz_result .cell {
-    vertical-align: top;
-}
-
-#quiz_result div.cell .container {
-    padding: 10px 20px 5px 20px;
-    margin-left: 10px;
-}
-
-.textblock {
-    padding: 0 20px 20px 20px;
-}
-
-video {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-section {
-    margin-bottom: 20px;
-}
-
-h1 {
-    line-height: 1;
-    margin: 0;
-    font-size: 8vh;
-}
-
-h2 {
-    line-height: 1;
-    margin: 0;
-    font-size: 6vh;
-}
-
-h3 {
-    line-height: 1;
-    margin: 0;
-    font-size: 5vh;
-}
-
-h4 {
-    line-height: 1;
-    margin: 0;
-    font-size: 24px;
-}
-
-ul {
-    margin-top: 15px;
-}
-
-.btnoff, .btnon {
-    width: 80px;
-}
-
 /*main layout*/
 body {
-    padding-top: 32vh;
+    padding-top: 0;
     font-size: 3vh;
     font-family: 'PressStart2P', sans-serif;
     margin: auto;
@@ -242,18 +105,5 @@ body {
     /* The 95% and 2vh can vary, depending on the topscreen offset  */
     background-position-y: 40px !important;
     background-size: auto 90% !important;
-    margin-top: 10vh !important;;
-}
-
-#quiz_start {
-    background: #29265B url('../img/spelregels.jpg') no-repeat fixed center;
-}
-
-#quiz_run {
-    background: #29265B url(../img/invaders-logo-klein.png) no-repeat fixed 78% 0;
-    background-size: auto 25% !important;
-}
-
-#quiz_result {
-    background: #29265B url('../img/uitslag-scherm-achtergrond.png') no-repeat fixed center;
+    margin-top: 10vh !important;
 }

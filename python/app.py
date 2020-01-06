@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from datetime import datetime
 import gpio
 
 app = Flask(__name__)
@@ -8,23 +9,24 @@ def main():
     led.reset()
     return render_template('index.html')
 
-@app.route("/quiz")
+@app.route("/run")
 def quiz():
+    with open('logfile.txt', 'a') as file:
+        file.write('Start game %s\n' %datetime.now())
+    f = open("logfile.txt", "a")
+    f.write("Now the file has more content!")
+    f.close()
     led = gpio.GPIOhelper()
     led.reset()
-    return render_template('quiz_start.html')
+    return render_template('run.html')
 
-@app.route("/quiz_run",methods=['GET'])
-def quizRun():
+@app.route('/result')
+def quizResult():
+    with open('logfile.txt', 'a') as file:
+        file.write('Finish game %s\n' %datetime.now())
     led = gpio.GPIOhelper()
     led.reset()
-    return render_template('quiz_run.html')
-
-@app.route('/quiz_result/<result>')
-def quizResult(result):
-    led = gpio.GPIOhelper()
-    led.reset()
-    return render_template('quiz_result.html', score=int(result))
+    return render_template('result.html')
 
 @app.route('/blink/<pin>',methods=['POST'])
 def blink(pin):

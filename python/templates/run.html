@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../static/css/main.css" type="text/css"/>
+    <script src="../static/js/framework.js"></script>
+    <script src="../static/js/main.js"></script>
+    <title>XRAY - QUIZ</title>
+</head>
+<body id="run" class="back__blue">
+
+<canvas id="canvas" width="690" height="651"
+        style="cursor:crosshair;background:url(http://www.mundoanimalia.com/images/articles/66/58/06/7f6ffaa6bb0b408017b62254211691b5/gallina.jpg)"></canvas>
+
+<button onclick="verify()">verify</button>
+
+<script>
+
+    function keyHandler(keyCode) {
+        // console.log(keyCode);
+        if (keyCode == 32) { //spacebar
+            verify();
+        }
+        if (keyCode == 114) { //<r> reset
+            console.log(keyCode);
+            answer();
+            verify();
+        }
+    }
+
+    $(function () {
+
+        $("#canvas").click(function(e){
+            getPosition(e);
+        });
+
+        inactiveTimer = setTimeout(function () {
+            self.location.href = '/';
+        }, inactiveTime);
+
+        //playAudio('../static/audio/invaders-intro.wav', true, false);
+        ready = true;
+
+        // switchOff(4); //1st button
+        // switchOn(24); //2nd button
+
+    });
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
