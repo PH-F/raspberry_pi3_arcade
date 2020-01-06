@@ -10,7 +10,7 @@
 </head>
 <body id="index" class="back__blue">
 
-Start image met uitleg [r]
+Start image met uitleg [s]
 <!--<center>
     <video width="1024" height="768" autoplay loop>
         <source src="../static/invaders-intro.mp4" type="video/mp4">
@@ -20,7 +20,8 @@ Start image met uitleg [r]
 
 <script>
     function keyHandler(keyCode) {
-        if (keyCode == 114) { //s
+        console.log(keyCode);
+        if (keyCode == 115) { //s
             // switchOff(4); //1st button
             location.href = '/run';
         }

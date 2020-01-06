@@ -11,10 +11,8 @@ def main():
 
 @app.route("/run")
 def quiz():
-    with open('logfile.txt', 'a') as file:
-        file.write('Start game %s\n' %datetime.now())
     f = open("logfile.txt", "a")
-    f.write("Now the file has more content!")
+    f.write('Start game %s\n' %datetime.now())
     f.close()
     led = gpio.GPIOhelper()
     led.reset()
@@ -22,8 +20,9 @@ def quiz():
 
 @app.route('/result')
 def quizResult():
-    with open('logfile.txt', 'a') as file:
-        file.write('Finish game %s\n' %datetime.now())
+    f = open("logfile.txt", "a")
+    f.write('Finish game %s\n' %datetime.now())
+    f.close()
     led = gpio.GPIOhelper()
     led.reset()
     return render_template('result.html')

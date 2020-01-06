@@ -70,7 +70,7 @@ function verify() {
     if (coordinates.length == correct.length) {
         playAudio('../static/audio/ok.wav', false, false);
         setTimeout(function () {
-            location.href = 'result/'
+            location.href = '/result'
         }, 1000);
     } else {
         playAudio('../static/audio/wrong.wav', false, false);
