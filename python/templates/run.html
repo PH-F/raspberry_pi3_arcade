@@ -18,14 +18,16 @@
 <script>
 
     function keyHandler(keyCode) {
-        // console.log(keyCode);
+        console.log(keyCode);
         if (keyCode == 32) { //spacebar
             verify();
         }
         if (keyCode == 114) { //<r> reset
-            console.log(keyCode);
             answer();
             verify();
+        }
+        if (keyCode == 102) { //<f> fire
+            getPosition(mousePos);
         }
     }
 
@@ -35,6 +37,10 @@
             getPosition(e);
         });
 
+        $("body").mousemove(function(e) {
+            mousePos = e;
+        })
+
         inactiveTimer = setTimeout(function () {
             self.location.href = '/';
         }, inactiveTime);
@@ -42,8 +48,9 @@
         //playAudio('../static/audio/invaders-intro.wav', true, false);
         ready = true;
 
-        switchOff(4); //1st button
-        switchOn(24); //2nd button
+        switchOff(18); //1st button
+        switchOn(23); //2nd button
+        switchOn(24); //3nd button
 
     });
 

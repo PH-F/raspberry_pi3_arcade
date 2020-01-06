@@ -22,15 +22,16 @@ Start image met uitleg [s]
     function keyHandler(keyCode) {
         console.log(keyCode);
         if (keyCode == 115) { //s
-            switchOff(4); //1st button
+            switchOff(18); //1st button
             location.href = '/run';
         }
     }
 
     $(function () {
         ready = true;
-        switchOn(4); //1st button
-        switchOff(24); //2nd button
+        switchOn(18); //1st button
+        switchOff(23); //2nd button
+        switchOff(24); //4nd button
         clearTimeout(inactiveTimer);
 
     });

@@ -6,6 +6,7 @@ var inActiveSeconds = 120;
 
 
 // Private
+var mousePos;
 var timer;
 var timestamp = 0;
 var inactiveTimer;

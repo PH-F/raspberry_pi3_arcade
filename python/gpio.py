@@ -10,11 +10,11 @@ class GPIOhelper:
     
     pin = int(pin)
 
-    if pin in [25,24,4,17,27,22]:
+    if pin in [18,23,24]:
       GPIO.setwarnings(False)
       GPIO.setmode(GPIO.BCM)
       GPIO.setup(int(pin), GPIO.OUT, initial=GPIO.HIGH)
-      sleep(float(time));
+      sleep(float(time))
       GPIO.output(int(pin), 0)
     else:
       message = "pin not found"
@@ -26,7 +26,7 @@ class GPIOhelper:
     pin = int(pin)
     message = ""
 
-    if pin in [25,24,4,17,27,22]:
+    if pin in [18,23,24]:
       GPIO.setwarnings(False)
       GPIO.setmode(GPIO.BCM)
       GPIO.setup(int(pin), GPIO.OUT, initial=GPIO.HIGH)
@@ -39,7 +39,7 @@ class GPIOhelper:
     pin = int(pin)
     message = ""
 
-    if pin in [25,24,4,17,27,22]:
+    if pin in [18,23,24]:
       GPIO.setwarnings(False)
       GPIO.setmode(GPIO.BCM)
       GPIO.setup(int(pin), GPIO.OUT, initial=GPIO.LOW)
