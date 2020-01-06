@@ -68,12 +68,12 @@ function verify() {
     });
 
     if (coordinates.length == correct.length) {
-        // playAudio('../static/audio/Ok.wav', false, false);
+        playAudio('../static/audio/ok.wav', false, false);
         setTimeout(function () {
             location.href = 'result/'
         }, 1000);
     } else {
-        // playAudio('../static/audio/Fout.wav', false, false);
+        playAudio('../static/audio/wrong.wav', false, false);
         inactiveTimer = setTimeout(function () {
             self.location.href = '/';
         }, inactiveTime);

@@ -13,16 +13,14 @@
     2. sudo pip install evdev
     3. sudo apt-get install git-core
 
-    5. cd /home/Pi
-    6. git clone git://git.drogon.net/wiringPi
-    7. cd wiringPi
-    8. ./build
-    10. cd /var
-    11. sudo chown pi:pi www
-    12. cd /var/www
-    13. git clone https://github.com/PH-F/raspberry_pi3_arcade.git
-    14. mv /var/www/raspberry_pi3_arcade /var/www/app
-    15. test with python /var/www/app/python/app.py & open the browser to http://localhost:5000
+    5. cd /home/pi
+    6. Install wiringPi >> http://wiringpi.com/download-and-install/
+    7. cd /var
+    8. sudo chown pi:pi www
+    9. cd /var/www
+    10. git clone --branch xray https://github.com/PH-F/raspberry_pi3_arcade.git
+    11. mv /var/www/raspberry_pi3_arcade /var/www/app
+    12. test with python /var/www/app/python/app.py & open the browser to http://localhost:5000
     
 9. Start the pythonscript at boot
 	1. sudo chmod 755 /var/www/app/boot.sh

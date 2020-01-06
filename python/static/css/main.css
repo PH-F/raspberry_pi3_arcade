@@ -53,8 +53,8 @@
 }
 
 .back__blue {
-    background-color: #00000;
-    color: #F4E604;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .table {
@@ -95,7 +95,7 @@
 /*main layout*/
 body {
     padding-top: 0;
-    font-size: 3vh;
+    font-size: 4vh;
     font-family: 'PressStart2P', sans-serif;
     margin: auto;
 
