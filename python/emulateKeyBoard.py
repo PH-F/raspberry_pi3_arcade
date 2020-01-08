@@ -36,8 +36,8 @@ def button26(channel):
     ui.syn()
 
 def button12(channel):
-    ui.write(e.EV_KEY, e.KEY_UP ,1)
-    ui.write(e.EV_KEY, e.KEY_UP ,0)
+    ui.write(e.EV_KEY, e.KEY_LEFT ,1)
+    ui.write(e.EV_KEY, e.KEY_LEFT ,0)
     ui.syn()
 
 def button16(channel):
@@ -46,8 +46,8 @@ def button16(channel):
     ui.syn()
 
 def button25(channel):
-    ui.write(e.EV_KEY, e.KEY_LEFT ,1)
-    ui.write(e.EV_KEY, e.KEY_LEFT ,0)
+    ui.write(e.EV_KEY, e.KEY_UP ,1)
+    ui.write(e.EV_KEY, e.KEY_UP ,0)
     ui.syn()
 
 def button22(channel):
