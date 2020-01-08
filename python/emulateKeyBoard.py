@@ -62,8 +62,8 @@ GPIO.add_event_detect(26, GPIO.FALLING, callback = button26, bouncetime = 500)
 
 GPIO.add_event_detect(12, GPIO.FALLING, callback = button12, bouncetime = 500)
 GPIO.add_event_detect(16, GPIO.FALLING, callback = button16, bouncetime = 500)
-GPIO.add_event_detect(25, GPIO.FALLING, callback = button4, bouncetime = 500)
-GPIO.add_event_detect(22, GPIO.FALLING, callback = button27, bouncetime = 500)
+GPIO.add_event_detect(25, GPIO.FALLING, callback = button25, bouncetime = 500)
+GPIO.add_event_detect(22, GPIO.FALLING, callback = button22, bouncetime = 500)
 
 while 1:  
     time.sleep(1)  
