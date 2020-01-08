@@ -8,6 +8,11 @@ GPIO.setup(6, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 GPIO.setup(13, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 GPIO.setup(26, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 
+GPIO.setup(12, GPIO.IN, pull_up_down = GPIO.PUD_UP)
+GPIO.setup(16, GPIO.IN, pull_up_down = GPIO.PUD_UP)
+GPIO.setup(4, GPIO.IN, pull_up_down = GPIO.PUD_UP)
+GPIO.setup(27, GPIO.IN, pull_up_down = GPIO.PUD_UP)
+
 ui = UInput()
 
 def button5(channel):
@@ -30,10 +35,35 @@ def button26(channel):
     ui.write(e.EV_KEY, e.KEY_R ,0)
     ui.syn()
 
+def button12(channel):
+    ui.write(e.EV_KEY, e.KEY_UP ,1)
+    ui.write(e.EV_KEY, e.KEY_UP ,0)
+    ui.syn()
+
+def button16(channel):
+    ui.write(e.EV_KEY, e.KEY_RIGHT ,1)
+    ui.write(e.EV_KEY, e.KEY_RIGHT ,0)
+    ui.syn()
+
+def button4(channel):
+    ui.write(e.EV_KEY, e.KEY_LEFT ,1)
+    ui.write(e.EV_KEY, e.KEY_LEFT ,0)
+    ui.syn()
+
+def button27(channel):
+    ui.write(e.EV_KEY, e.KEY_DOWN ,1)
+    ui.write(e.EV_KEY, e.KEY_DOWN ,0)
+    ui.syn()
+
 GPIO.add_event_detect(5, GPIO.FALLING, callback = button5, bouncetime = 500)
 GPIO.add_event_detect(6, GPIO.FALLING, callback = button6, bouncetime = 500)
 GPIO.add_event_detect(13, GPIO.FALLING, callback = button13, bouncetime = 500)
 GPIO.add_event_detect(26, GPIO.FALLING, callback = button26, bouncetime = 500)
+
+GPIO.add_event_detect(12, GPIO.FALLING, callback = button12, bouncetime = 500)
+GPIO.add_event_detect(16, GPIO.FALLING, callback = button16, bouncetime = 500)
+GPIO.add_event_detect(4, GPIO.FALLING, callback = button4, bouncetime = 500)
+GPIO.add_event_detect(27, GPIO.FALLING, callback = button27, bouncetime = 500)
 
 while 1:  
     time.sleep(1)  

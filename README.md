@@ -46,7 +46,9 @@
     @chromium-browser --incognito --kiosk http://localhost:5000
 	```
 	4. save and reboot
-	5. Note:   crtl W   will close the browser!
+	5. Note:   ctrl W   will close the browser!
+	6. Note:   ctrl+alt+t will start the terminal
+	7. If you want the desktop back then rename the /home/pi/.config/lxsession/LXDE-pi/autostart file
 
 
 # Run (in the background)
@@ -58,7 +60,21 @@ sudo python python/emulateKeyBoard.py
 ![Image](https://github.com/PH-F/raspberry_pi3_arcade/blob/xray/tests/pinout.png)
 
 ## GamePlay
-- key <s> = start game (on start screen)
+- key < s > = start game (on start screen)
 - key <space> = verify answer (on run screen)
 - key <r> = give one answer (on run screen)
+- key <f> = fire (also mouseclick) (on run screen)
 - key <r><r> = back to start  (on run screen)
+
+
+## Using a 800*480 display
+(https://www.kiwi-electronics.nl/7-inch-raspberry-pi-dsi-touchscreen-display?search=raspberry%20Pi%207)
+#### Change:
+framebuffer_width=800
+framebuffer_height=480
+
+#### Change/ add
+hdmi_group=2
+hdmi_mode=87
+hdmi_cvt=800 480 60 6 0 0 0
+hdmi_drive=1
