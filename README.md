@@ -69,12 +69,15 @@ sudo python python/emulateKeyBoard.py
 
 ## Using a 800*480 display
 (https://www.kiwi-electronics.nl/7-inch-raspberry-pi-dsi-touchscreen-display?search=raspberry%20Pi%207)
-#### Change:
+#### Change  in /boot/config.txt:
 framebuffer_width=800
 framebuffer_height=480
 
-#### Change/ add
+#### Change/ add  in /boot/config.txt
 hdmi_group=2
 hdmi_mode=87
 hdmi_cvt=800 480 60 6 0 0 0
 hdmi_drive=1
+
+#### rotate screen  in /boot/config.txt
+lcd_rotate=2
