@@ -1,7 +1,7 @@
 // Configuarable
 var coordinates = ["30,369","171,41","250,389","536,194","538,335"];
 
-var margin = 20;
+var margin = 30;
 var pointSize = 20;
 var inActiveSeconds = 120;
 
