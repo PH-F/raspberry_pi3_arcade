@@ -62,7 +62,6 @@ function getPosition(event) {
     var rect = canvas.getBoundingClientRect();
     var x = event.clientX - rect.left;
     var y = event.clientY - rect.top;
-
     drawCoordinates(x, y, true);
 }
 

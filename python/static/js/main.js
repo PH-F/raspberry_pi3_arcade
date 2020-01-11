@@ -1,9 +1,9 @@
 // Configuarable
-var coordinates = ["102,51", "462,54", "99,382", "464,384"];
+var coordinates = ["30,369","171,41","250,389","536,194","538,335"];
+
 var margin = 20;
 var pointSize = 20;
 var inActiveSeconds = 120;
-
 
 // Private
 var mousePos;
@@ -46,6 +46,7 @@ function monitor(x, y) {
 
     coordinates.forEach(function (coordinate, index) {
         var xy = coordinate.split(",");
+
         if (parseInt(xy[0]).between(x - margin, x + margin) && parseInt(xy[1]).between(y - margin, y + margin)) {
             if (!correct.includes(index)) {
                 correct.push(index);

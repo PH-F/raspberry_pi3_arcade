@@ -53,8 +53,8 @@
 }
 
 .back__blue {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 .table {
@@ -105,5 +105,4 @@ body {
     /* The 95% and 2vh can vary, depending on the topscreen offset  */
     background-position-y: 40px !important;
     background-size: auto 90% !important;
-    margin-top: 10vh !important;
 }

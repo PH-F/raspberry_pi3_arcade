@@ -10,15 +10,16 @@
 </head>
 <body id="run" class="back__blue">
 
-<canvas id="canvas" width="690" height="651"
-        style="cursor:crosshair;background:url(http://www.mundoanimalia.com/images/articles/66/58/06/7f6ffaa6bb0b408017b62254211691b5/gallina.jpg)"></canvas>
+<center><canvas id="canvas" width="697" height="480"
+        style="cursor:crosshair;background:url(static/img/xray.jpg)"></canvas>
+</center>
 
 <!--<button onclick="verify()">verify</button>-->
 
 <script>
 
     function keyHandler(keyCode) {
-        console.log(keyCode);
+        // console.log(keyCode);
         if (keyCode == 32) { //spacebar
             verify();
         }
@@ -28,6 +29,9 @@
         }
         if (keyCode == 102) { //<f> fire
             getPosition(mousePos);
+        }
+        if (keyCode == 115) { //<s> restart
+            self.location.href = '/';
         }
     }
 
@@ -50,7 +54,7 @@
 
         switchOff(18); //1st button
         switchOn(23); //2nd button
-        switchOn(24); //3nd button
+        // switchOn(24); //3nd button
 
     });
 
