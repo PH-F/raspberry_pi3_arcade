@@ -52,8 +52,12 @@
     padding: 50px;
 }
 
-.back__blue {
+.back__black {
     background-color: #000000;
+    color: #ffffff;
+}
+.back__blue {
+    background-color: #2E2D95;
     color: #ffffff;
 }
 

@@ -1,5 +1,5 @@
 // Configuarable
-var coordinates = ["30,369","171,41","250,389","536,194","538,335"];
+var coordinates = ["30,369", "171,41", "250,389", "536,194", "538,335"];
 
 var margin = 30;
 var pointSize = 20;
@@ -11,6 +11,7 @@ var timer;
 var timestamp = 0;
 var inactiveTimer;
 var correct = [];
+var wrong = [];
 var inactiveTime = (inActiveSeconds * 1000);
 
 /**
@@ -29,9 +30,9 @@ function translatekey(key) {
     }
 }
 
-function drawCoordinates(x, y, enableMonitor) {
+function drawCoordinates(x, y, enableMonitor, color) {
     var ctx = document.getElementById("canvas").getContext("2d");
-    ctx.fillStyle = "#ff2626"; // Red color
+    ctx.fillStyle = color; // Red color
 
     if (enableMonitor) {
         monitor(x, y);
@@ -43,13 +44,18 @@ function drawCoordinates(x, y, enableMonitor) {
 }
 
 function monitor(x, y) {
-
+    var tmp = '';
     coordinates.forEach(function (coordinate, index) {
         var xy = coordinate.split(",");
 
         if (parseInt(xy[0]).between(x - margin, x + margin) && parseInt(xy[1]).between(y - margin, y + margin)) {
             if (!correct.includes(index)) {
                 correct.push(index);
+            }
+        } else {
+            tmp = x + ',' + y;
+            if (!wrong.includes(index) && !correct.includes(index)) {
+                wrong.push(tmp);
             }
         }
     });
@@ -64,9 +70,27 @@ function clear() {
 function verify() {
     clearInterval(inactiveTimer);
     clear();
+    wrong.forEach(function (item) {
+        xy = item.split(",");
+        drawCoordinates(parseInt(xy[0]), parseInt(xy[1]), false, "#FF0000");
+    });
     correct.forEach(function (item) {
         xy = coordinates[item].split(",");
-        drawCoordinates(parseInt(xy[0]), parseInt(xy[1]), false);
+        drawCoordinates(parseInt(xy[0]), parseInt(xy[1]), false, "#00FF00");
+    });
+    setTimeout(function () {
+        verifyTimeout()
+    }, 1000);
+
+
+}
+
+function verifyTimeout() {
+    clear();
+    wrong = [];
+    correct.forEach(function (item) {
+        xy = coordinates[item].split(",");
+        drawCoordinates(parseInt(xy[0]), parseInt(xy[1]), false, "#00FF00");
     });
 
     if (coordinates.length == correct.length) {
@@ -80,7 +104,6 @@ function verify() {
             self.location.href = '/';
         }, inactiveTime);
     }
-
 }
 
 function answer() {
