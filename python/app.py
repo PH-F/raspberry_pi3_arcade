@@ -9,23 +9,35 @@ def main():
     led.reset()
     return render_template('index.html')
 
-@app.route("/run")
+@app.route("/run/<code1>/<code2>/<code3>",methods=['GET']
 def quiz():
     f = open("logfile.txt", "a")
-    f.write('Start game %s\n' %datetime.now())
+    f.write('\nDate %s Code' %datetime.now())
+    f.write('%s' code1)
+    f.write('%s' code2)
+    f.write('%s' code3)
     f.close()
-    led = gpio.GPIOhelper()
-    led.reset()
-    return render_template('run.html')
 
-@app.route('/result')
-def quizResult():
-    f = open("logfile.txt", "a")
-    f.write('Finish game %s\n' %datetime.now())
-    f.close()
+    swapped = 0
+    ok = 0
+
+    if (not code1 == 1 and (code2 == 1 or code3 == 1)):
+      swapped+=1
+    if (not code2 == 2 and (code1 == 2 or code3 == 2)):
+      swapped+=1
+    if (not code3 == 4 and (code1 == 4 or code2 == 4)):
+      swapped+=1
+
+    if (code1 == 1):
+      ok+=1
+    if (code2 == 2):
+      ok+=1
+    if (code3 == 4):
+      ok+=1
+
     led = gpio.GPIOhelper()
     led.reset()
-    return render_template('result.html')
+    return render_template('run.html', ok=int(ok), swapped=int(swapped))
 
 @app.route('/blink/<pin>',methods=['POST'])
 def blink(pin):

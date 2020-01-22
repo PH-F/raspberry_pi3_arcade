@@ -62,7 +62,7 @@ function getPosition(event) {
     var rect = canvas.getBoundingClientRect();
     var x = event.clientX - rect.left;
     var y = event.clientY - rect.top;
-    drawCoordinates(x, y, true, "#FFFF00");
+    // drawCoordinates(x, y, true, "#FFFF00");
 }
 
 function getCurrentTimeStamp() {
@@ -76,10 +76,10 @@ function getCurrentTimeStamp() {
 $(function () {
     $(document).keypress(function (e) {
         // console.log(e.which);
-        if (e.which == 50) { //3
-            location.href = '/'
-        } else if (ready) {
-            keyHandler(e.which)
-        }
+        // if (e.which == 50) { //3
+        //     location.href = '/'
+        // } else if (ready) {
+        //     keyHandler(e.which)
+        // }
     });
 });

@@ -6,64 +6,71 @@
     <link rel="stylesheet" href="../static/css/main.css" type="text/css"/>
     <script src="../static/js/framework.js"></script>
     <script src="../static/js/main.js"></script>
-    <title>XRAY - QUIZ</title>
+    <title>MASTERMIND - QUIZ</title>
+    <style>
+        .answer {
+            font-size: 97px;
+            line-height: 18px;
+            width: 76px;
+            padding-top: 17px;
+            vertical-align: middle;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .answer1 {
+            margin-top: -331px;
+            text-align: left;
+            padding-left: 222px;
+        }
+
+        .answer2 {
+            margin-top: 105px;
+            text-align: left;
+            padding-left: 222px;
+        }
+    </style>
 </head>
-<body id="run" class="back__black">
+<body id="run" class="back__blue">
+<center>
+    <a href="/">
+        {% if ok == 3 %}
+            <img width="800" src="static/img/rebus.jpg">
+        {% else %}
+            <img width="800" src="static/img/game.jpg">
 
-<center><canvas id="canvas" width="697" height="480"
-        style="cursor:crosshair;background:url(static/img/xray.jpg)"></canvas>
+            <div class="answer1">U heeft <span class="answer">{% ok %}</span>
+                {% if ok == 1 %}
+                  cijfer goed en op de juiste plaats
+                {% else %}
+                  cijfers goed en op de juiste plaats
+                {% endif %}
+            </div>
+            <div class="answer2">U heeft <span class="answer">{% swapped %}</span>
+                {% if swapped == 1 %}
+                  cijfer goed maar op de verkeerde plaats
+                {% else %}
+                  cijfers goed maar op de verkeerde plaats
+                {% endif %}
+            </div>
+        {% endif %}
+    </a>
+
+
 </center>
-
-<!--<button onclick="verify()">verify</button>-->
-
 <script>
-
     function keyHandler(keyCode) {
-        // console.log(keyCode);
-        if (keyCode == 32) { //spacebar
-            verify();
-        }
-        if (keyCode == 114) { //<r> reset
-            answer();
-            verify();
-        }
-        if (keyCode == 102) { //<f> fire
-            getPosition(mousePos);
-        }
-        if (keyCode == 115) { //<s> restart
-            self.location.href = '/';
-        }
+        self.location.href = '/';
     }
 
     $(function () {
-
-        $("#canvas").click(function(e){
-            getPosition(e);
-        });
-
-        $("body").mousemove(function(e) {
-            mousePos = e;
-        })
-
         inactiveTimer = setTimeout(function () {
             self.location.href = '/';
         }, inactiveTime);
 
-        //playAudio('../static/audio/invaders-intro.wav', true, false);
         ready = true;
-
-        switchOff(18); //1st button
-        switchOn(23); //2nd button
-        // switchOn(24); //3nd button
-
     });
 
-
-
-
-
-
 </script>
-
 </body>
 </html>

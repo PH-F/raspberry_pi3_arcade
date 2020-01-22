@@ -27,6 +27,10 @@
     font-family: 'Teko-SemiBold.ttf';
     src: url('../fonts/Teko-SemiBold.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'VT323-Regular';
+    src: url('../fonts/VT323-Regular.ttf') format('truetype');
+}
 
 .hidden {
     display: none;
@@ -57,7 +61,7 @@
     color: #ffffff;
 }
 .back__blue {
-    background-color: #2E2D95;
+    background-color: #761E1D;
     color: #ffffff;
 }
 
@@ -96,11 +100,15 @@
     width: 1%;
     height: 30px;
 }
+a {
+    color: #fff;
+    text-decoration: none;
+}
 /*main layout*/
 body {
     padding-top: 0;
-    font-size: 4vh;
-    font-family: 'PressStart2P', sans-serif;
+    font-size: 1.4em;
+    font-family: 'VT323-Regular', sans-serif;
     margin: auto;
 
     /* max screen width for center block */
