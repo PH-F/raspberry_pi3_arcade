@@ -9,7 +9,7 @@ def main():
     led.reset()
     return render_template('index.html')
 
-@app.route("/run/<code1>/<code2>/<code3>",methods=['GET']
+@app.route("/run/<code1>/<code2>/<code3>",methods=['GET'])
 def quiz():
     f = open("logfile.txt", "a")
     f.write('\nDate %s Code' %datetime.now())
