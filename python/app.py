@@ -13,9 +13,9 @@ def main():
 def quiz():
     f = open("logfile.txt", "a")
     f.write('\nDate %s Code' %datetime.now())
-    f.write('%s' code1)
-    f.write('%s' code2)
-    f.write('%s' code3)
+    f.write('%s' %code1)
+    f.write('%s' %code2)
+    f.write('%s' %code3)
     f.close()
 
     swapped = 0
