@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="../static/css/main.css" type="text/css"/>
-    <script src="../static/js/framework.js"></script>
-    <script src="../static/js/main.js"></script>
+    <script src="/static/js/framework.js"></script>
+    <script src="/static/js/main.js"></script>
     <title>MASTERMIND - QUIZ</title>
     <style>
         .answer {
@@ -35,9 +35,9 @@
 <center>
     <a href="/">
         {% if ok == 3 %}
-            <img width="800" src="static/img/rebus.jpg">
+            <img width="800" src="/static/img/rebus.jpg">
         {% else %}
-            <img width="800" src="static/img/game.jpg">
+            <img width="800" src="/static/img/game.jpg">
 
             <div class="answer1">U heeft <span class="answer">{{ ok }}</span>
                 {% if ok == 1 %}
