@@ -18,21 +18,21 @@ def run(code1, code2, code3):
     f.write('%s' %code3)
     f.close()
 
-    swapped = 1
-    ok = 1
+    swapped = 0
+    ok = 0
 
-    if (not code1 == 1 and (code2 == 1 or code3 == 1)):
+    if (not int(code1) == 1 and (int(code2) == 1 or int(code3) == 1)):
       swapped+=1
-    if (not code2 == 2 and (code1 == 2 or code3 == 2)):
+    if (not int(code2) == 2 and (int(code1) == 2 or int(code3) == 2)):
       swapped+=1
-    if (not code3 == 4 and (code1 == 4 or code2 == 4)):
+    if (not int(code3) == 4 and (int(code1) == 4 or int(code2) == 4)):
       swapped+=1
 
-    if (code1 == 1):
+    if (int(code1) == 1):
       ok+=1
-    if (code2 == 2):
+    if (int(code2) == 2):
       ok+=1
-    if (code3 == 4):
+    if (int(code3) == 4):
       ok+=1
 
     led = gpio.GPIOhelper()
