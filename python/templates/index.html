@@ -17,7 +17,6 @@
         <input type="text" id="code1" maxlength="1" class="field" autofocus onkeyup="goNext(2)">
         <input type="text" id="code2" maxlength="1" class="field" onkeyup="goNext(3)">
         <input type="text" id="code3" maxlength="1" class="field">
-        <button onclick="goNext(4)">&nbsp;</button>
     </div>
 </div>
 <div id="remoteContainer">
@@ -28,6 +27,7 @@
         <span id="code4" onclick="addCode(4)">&nbsp;</span>
         <span id="code0" onclick="addCode(0)">&nbsp;</span>
     </div>
+    <button onclick="goNext(4)">&nbsp;</button>
 </div>
 <script>
     function keyHandler(keyCode) {

@@ -101,7 +101,7 @@ body {
 }
 
 .field:first-child {
-    margin-left: 23px;
+    margin-left: 0px;
 }
 
 .field {
@@ -125,8 +125,9 @@ body {
 }
 
 #codeContainer > div {
-    width: 700px;
+    width: 400px;
     display: inline-block;
+    text-align: left;
 }
 
 #codeContainer > div > button {
