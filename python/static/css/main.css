@@ -134,6 +134,8 @@ body {
     padding: 25px 63px;
     margin-top: 137px;
     background: transparent;
+    border-width: 0;
+    cursor: pointer;
 }
 
 #remoteContainer {
@@ -141,10 +143,17 @@ body {
     position: absolute;
     margin-top: -115px;
     font-size: 83px;
-    margin-left: 230px;
+    /* margin-left: 230px; */
+    text-align: center;
+    width: 100%;
 }
-#remoteContainer>span {
+#remoteContainer>div {
+    display: inline-block;
+    margin-left: -138px;
+}
+#remoteContainer>div>span {
     display: inline-block;
     width: 59px;
     text-align: center;
+    cursor: pointer;
 }
