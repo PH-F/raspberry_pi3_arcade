@@ -18,8 +18,8 @@ def run(code1, code2, code3):
     f.write('%s' %code3)
     f.close()
 
-    swapped = 0
-    ok = 0
+    swapped = 1
+    ok = 1
 
     if (not code1 == 1 and (code2 == 1 or code3 == 1)):
       swapped+=1
