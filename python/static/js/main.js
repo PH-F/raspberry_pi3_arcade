@@ -56,6 +56,6 @@ function goNext(code) {
         }
     }
     if (code == 4) {
-        location.href = '/game/' + v('code1','9') + '/' + v('code2','9') + '/' + v('code1','9');
+        location.href = '/game/' + v('code1','9') + '/' + v('code2','9') + '/' + v('code3','9');
     }
 }
