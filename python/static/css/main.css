@@ -155,20 +155,30 @@ body {
 
 #remoteContainer {
     display: inline-block;
-    position: absolute;
-    margin-top: -115px;
+    /* position: absolute; */
+    margin-top: -221px;
     font-size: 83px;
-    /* margin-left: 230px; */
+    margin-left: calc(50% - 297px);
     text-align: center;
-    width: 100%;
+    width: 456px;
+
 }
 #remoteContainer>div {
     display: inline-block;
-    margin-left: -138px;
+    position: absolute;
+    margin-top: -131px;
+    margin-left: -212px;
 }
 #remoteContainer>div>span {
     display: inline-block;
     width: 59px;
     text-align: center;
     cursor: pointer;
+}
+textarea:focus, input:focus{
+    outline: none;
+}
+
+*:focus {
+    outline: none;
 }
