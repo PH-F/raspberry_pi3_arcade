@@ -39,14 +39,14 @@
         {% else %}
             <img width="800" src="static/img/game.jpg">
 
-            <div class="answer1">U heeft <span class="answer">{% ok %}</span>
+            <div class="answer1">U heeft <span class="answer">{{ ok }}</span>
                 {% if ok == 1 %}
                   cijfer goed en op de juiste plaats
                 {% else %}
                   cijfers goed en op de juiste plaats
                 {% endif %}
             </div>
-            <div class="answer2">U heeft <span class="answer">{% swapped %}</span>
+            <div class="answer2">U heeft <span class="answer">{{ swapped }}</span>
                 {% if swapped == 1 %}
                   cijfer goed maar op de verkeerde plaats
                 {% else %}
