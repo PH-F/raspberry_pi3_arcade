@@ -134,6 +134,8 @@ body {
     height: 50px;
     margin-top: -103px;
     cursor: pointer;
+    border-width: 0;
+    background: transparent;
 }
 
 #codeContainer > div {

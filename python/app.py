@@ -9,8 +9,8 @@ def main():
     led.reset()
     return render_template('index.html')
 
-@app.route("/run/<code1>/<code2>/<code3>",methods=['GET'])
-def quiz():
+@app.route("/game/<code1>/<code2>/<code3>",methods=['GET'])
+def run(code1m code2, code3):
     f = open("logfile.txt", "a")
     f.write('\nDate %s Code' %datetime.now())
     f.write('%s' %code1)
