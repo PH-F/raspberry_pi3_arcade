@@ -7,46 +7,6 @@
     <script src="../static/js/main.js"></script>
     <link rel="stylesheet" href="../static/css/main.css" type="text/css"/>
     <title>MASTERMIND</title>
-    <style>
-        .field:first-child {
-            margin-left: 50px;
-        }
-
-        .field {
-            line-height: 75px;
-            width: 55px;
-            margin-right: 29px;
-            color: #fff;
-            background: transparent;
-            font-size: 77px;
-            font-family: 'VT323-Regular';
-            text-align: center;
-            border: 2px blue solid;
-        }
-
-        #codeContainer {
-            position: absolute;
-            top: 246px;
-            width: 100%;
-            left: 0;
-            text-align: center
-        }
-
-        #codeContainer > div {
-            width: 700px;
-            display: inline-block;
-        }
-
-        #codeContainer > div > button {
-            float: right;
-            padding: 25px 63px;
-            margin-top: 102px;
-            background: transparent;
-            border: 2px blue solid;
-        }
-
-
-    </style>
 </head>
 <body id="index" class="back__blue">
 <center>
@@ -58,12 +18,14 @@
         <input type="text" id="code2" maxlength="1" class="field" onkeyup="goNext(3)">
         <input type="text" id="code3" maxlength="1" class="field">
         <button onclick="goNext(4)">&nbsp;</button>
+    </div>
+</div>
+<div id="remoteContainer">
         <span id="code1" onclick="addCode(1)">1</span>
         <span id="code2" onclick="addCode(2)">2</span>
         <span id="code3" onclick="addCode(3)">3</span>
         <span id="code4" onclick="addCode(4)">4</span>
         <span id="code0" onclick="addCode(0)">0</span>
-    </div>
 </div>
 <script>
     function keyHandler(keyCode) {

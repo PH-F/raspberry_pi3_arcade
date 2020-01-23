@@ -23,7 +23,7 @@ function translatekey(key) {
 }
 
 function v(id, def) {
-    val = document.getElementById('code1').value;
+    val = document.getElementById(id).value;
     if(val == '') {
         val = def;
     }
